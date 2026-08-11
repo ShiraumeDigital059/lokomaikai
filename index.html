@@ -4,22 +4,23 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>エステのご案内｜ハワイアンショップ LOKOMAIKAI（沖縄・読谷村）</title>
-<meta name="description" content="沖縄・読谷村のハワイアンショップ LOKOMAIKAI 店内の一室で行うエステ。ロミロミを中心に、その日のからだに合わせて。ご予約・メニュー・アクセスはこちら。">
+<meta name="description" content="沖縄・読谷村のハワイアンショップ LOKOMAIKAI 店内の一室で行うエステ。ハワイに伝わる手わざロミロミで、その日のからだをゆっくりほどきます。ご予約・メニュー・アクセスはこちら。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.className += ' anim';</script>
 <style>
   :root{
     --bg:#f5f0e6; --surface:#ece4d4; --cream:#faf6ec; --ink:#2b2924; --muted:#6c675d;
     --accent:#6e7b40; --accent-2:#8b955c; --accent-deep:#525d33; --accent-pale:#eef0e2;
     --forest:#28332a; --line:color-mix(in srgb,#2b2924 14%,transparent);
     --serif:"Noto Serif JP",serif; --display:"Cormorant Garamond","Noto Serif JP",serif;
-    --r:6px;
+    --r:6px; --ease:cubic-bezier(.2,.7,.2,1);
   }
   *,*::before,*::after{box-sizing:border-box;}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);font-weight:400;
-    font-size:15.5px;line-height:1.95;-webkit-font-smoothing:antialiased;letter-spacing:.02em;}
+    font-size:15.5px;line-height:1.95;-webkit-font-smoothing:antialiased;letter-spacing:.02em;overflow-x:hidden;}
   img{display:block;max-width:100%;}
   a{color:var(--accent-deep);text-underline-offset:3px;}
   figure{margin:0;}
@@ -27,29 +28,49 @@
   :focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
   ::selection{background:color-mix(in srgb,var(--accent) 28%,transparent);}
 
+  /* ===== SCROLL REVEAL (JS停止時は表示されたまま＝真っ白にならない) ===== */
+  .anim [data-rev]{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s);}
+  .anim [data-rev].in{opacity:1;transform:none;}
+  .anim [data-rev-x]{opacity:0;transform:translateX(-28px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s);}
+  .anim [data-rev-x].in{opacity:1;transform:none;}
+  .anim [data-rev-line]{transform:scaleX(0);transform-origin:center;transition:transform .8s var(--ease);}
+  .anim [data-rev-line].in{transform:scaleX(1);}
+  @media(prefers-reduced-motion:reduce){
+    .anim [data-rev],.anim [data-rev-x],.anim [data-rev-line]{opacity:1!important;transform:none!important;transition:none!important;}
+    .kb,.kb2{animation:none!important;}
+    .hero .place,.hero h1,.hero .sub,.hero .cta{animation:none!important;}
+  }
+
+  @keyframes kb{0%{transform:scale(1.06)}100%{transform:scale(1.2)}}
+  @keyframes kb2{0%{transform:scale(1.12)}100%{transform:scale(1.02)}}
+  @keyframes upIn{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+  @keyframes accIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+
   .wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 22px;}
   .narrow{max-width:760px;}
-  .section{padding:60px 0;}
+  .section{padding:74px 0;}
 
-  .eyebrow{display:flex;align-items:center;gap:12px;justify-content:center;flex-direction:column;text-align:center;}
-  .eyebrow .en{font-family:var(--display);font-size:26px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase;}
-  .eyebrow .jp{font-size:11px;letter-spacing:.34em;color:var(--muted);}
-  .eyebrow .deco{width:120px;height:1px;background:var(--accent-2);opacity:.6;}
+  /* section header — 区切りを明確に */
+  .head{text-align:center;margin-bottom:40px;}
+  .head .en{display:block;font-family:var(--display);font-size:30px;letter-spacing:.2em;color:var(--accent);text-transform:uppercase;line-height:1;}
+  .head .jp{display:inline-block;margin-top:12px;font-size:12px;letter-spacing:.4em;color:var(--muted);}
+  .head .deco{width:120px;height:1px;background:var(--accent-2);margin:16px auto 0;}
 
   .kicker{font-family:var(--display);font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin:0 0 8px;}
   .rule{width:44px;height:1px;background:var(--accent);margin-bottom:16px;}
   .title{font-size:24px;letter-spacing:.05em;line-height:1.7;}
-  .lead{font-size:15px;line-height:2.1;color:var(--muted);margin:16px 0 0;}
+  .lead{font-size:15px;line-height:2.15;color:var(--muted);margin:16px 0 0;}
 
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;
     font-size:14px;letter-spacing:.14em;line-height:1.2;padding:14px 26px;border-radius:var(--r);
-    border:1px solid transparent;color:var(--ink);background:transparent;cursor:pointer;transition:.2s;}
+    border:1px solid transparent;color:var(--ink);background:transparent;cursor:pointer;transition:.25s;}
   .btn-primary{color:#fff;background:var(--accent);border-color:var(--accent);}
-  .btn-primary:hover{background:var(--accent-deep);border-color:var(--accent-deep);}
+  .btn-primary:hover{background:var(--accent-deep);border-color:var(--accent-deep);transform:translateY(-2px);}
   .btn-line{border-color:var(--accent);color:var(--accent-deep);}
-  .btn-line:hover{background:var(--accent-pale);}
-  .btn-onphoto{border-color:rgba(255,255,255,.7);color:#fff;background:rgba(40,51,42,.28);backdrop-filter:blur(2px);}
-  .btn-onphoto:hover{background:rgba(40,51,42,.5);}
+  .btn-line:hover{background:var(--accent-pale);transform:translateY(-2px);}
+  .btn-onphoto{border-color:rgba(255,255,255,.75);color:#fff;background:rgba(40,51,42,.3);backdrop-filter:blur(2px);}
+  .btn-onphoto:hover{background:rgba(40,51,42,.55);transform:translateY(-2px);}
   .btn-lg{width:100%;padding:16px 26px;}
   @media(min-width:600px){.btn-lg{width:auto;}}
 
@@ -63,12 +84,11 @@
   .hamburger{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;
     border:1px solid var(--line);border-radius:var(--r);background:transparent;cursor:pointer;}
   .hamburger span{display:grid;gap:5px;}
-  .hamburger span span{display:block;width:19px;height:1px;background:var(--ink);}
+  .hamburger span span{display:block;width:19px;height:1px;background:var(--ink);transition:.25s;}
   .menu-panel{display:none;border-top:1px solid var(--line);background:var(--cream);}
-  .menu-cb:checked ~ .menu-panel{display:block;}
+  .menu-cb:checked ~ .menu-panel{display:block;animation:accIn .3s ease;}
   .menu-panel .inner{max-width:1080px;margin:0 auto;padding:6px 22px 22px;}
-  .menu-panel a{display:flex;align-items:baseline;gap:14px;padding:15px 2px;border-bottom:1px solid var(--line);
-    text-decoration:none;color:var(--ink);}
+  .menu-panel a{display:flex;align-items:baseline;gap:14px;padding:15px 2px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);}
   .menu-panel a .no{font-family:var(--display);font-size:12px;letter-spacing:.12em;color:var(--accent);min-width:24px;}
   .menu-panel a .lb{font-size:16px;letter-spacing:.05em;}
   .menu-panel a .en{margin-left:auto;font-family:var(--display);font-size:12px;letter-spacing:.14em;color:var(--muted);}
@@ -78,95 +98,95 @@
     .navlinks a{font-size:13.5px;letter-spacing:.1em;color:var(--ink);text-decoration:none;}
     .navlinks a:hover{color:var(--accent);}}
 
-  /* hero — 写真主役・文字は左下 */
-  .hero{position:relative;height:82vh;min-height:520px;max-height:760px;overflow:hidden;background:var(--forest);}
-  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-    filter:saturate(.92) contrast(1.02);}
-  .hero .grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(30,38,31,.72) 0%,rgba(30,38,31,.28) 34%,rgba(30,38,31,0) 60%);}
-  .hero .copy{position:absolute;left:0;right:0;bottom:0;padding:0 22px 40px;}
+  /* hero — 写真主役・強いフック */
+  .hero{position:relative;height:86vh;min-height:540px;max-height:800px;overflow:hidden;background:var(--forest);}
+  .hero .kb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.95) contrast(1.02);animation:kb 22s ease-in-out infinite alternate;}
+  .hero .grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,34,27,.78) 0%,rgba(26,34,27,.3) 38%,rgba(26,34,27,0) 66%);}
+  .hero .copy{position:absolute;left:0;right:0;bottom:0;padding:0 22px 46px;}
   .hero .copy .in{max-width:1080px;margin:0 auto;}
-  .hero .place{font-family:var(--display);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#e9e6d2;margin:0 0 14px;}
-  .hero h1{color:#fff;font-size:30px;letter-spacing:.08em;line-height:1.7;font-weight:400;text-shadow:0 1px 12px rgba(0,0,0,.25);}
-  .hero .cta{margin-top:22px;}
-  @media(min-width:768px){.hero h1{font-size:40px;} .hero .copy{padding-bottom:56px;}}
+  .hero .place{font-family:var(--display);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#e9e6d2;margin:0 0 14px;animation:upIn .9s .15s both var(--ease);}
+  .hero h1{color:#fff;font-size:33px;letter-spacing:.09em;line-height:1.62;font-weight:500;text-shadow:0 2px 16px rgba(0,0,0,.35);animation:upIn 1s .3s both var(--ease);}
+  .hero .sub{color:#f1eede;font-size:15px;letter-spacing:.06em;margin:14px 0 0;text-shadow:0 1px 10px rgba(0,0,0,.4);animation:upIn 1s .5s both var(--ease);}
+  .hero .cta{margin-top:26px;animation:upIn 1s .68s both var(--ease);}
+  .hero .scroll{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);color:rgba(255,255,255,.7);font-family:var(--display);font-size:10px;letter-spacing:.3em;animation:floaty 2.4s ease-in-out infinite;}
+  @media(min-width:768px){.hero h1{font-size:46px;} .hero .sub{font-size:17px;} .hero .copy{padding-bottom:60px;}}
 
-  /* concept — 写真＋文（写真主役） */
-  .concept .grid{display:grid;gap:26px;}
+  /* concept */
+  .concept .grid{display:grid;gap:28px;}
   @media(min-width:820px){.concept .grid{grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;}}
   .photo{width:100%;object-fit:cover;border-radius:var(--r);}
-  .photo-mat{border:6px solid var(--cream);outline:1px solid var(--line);border-radius:2px;}
+  .photo-mat{border:6px solid var(--cream);outline:1px solid var(--line);border-radius:3px;box-shadow:0 18px 40px -24px rgba(40,51,42,.5);}
   .cap{font-size:12px;color:var(--muted);margin-top:9px;letter-spacing:.06em;}
-  .words{margin:20px 0 0;display:grid;gap:12px;}
+  .words{margin:22px 0 0;display:grid;gap:12px;}
   .word{display:flex;gap:16px;align-items:baseline;padding-bottom:12px;border-bottom:1px solid var(--line);}
   .word b{font-family:var(--display);font-style:italic;font-weight:400;font-size:28px;color:var(--accent);min-width:3.2em;}
   .word span{font-size:15px;}
 
-  /* full-bleed band photo */
-  .band{position:relative;height:44vh;min-height:280px;max-height:460px;overflow:hidden;background:var(--forest);}
-  .band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.9) brightness(.82);}
-  .band .grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(30,38,31,.6),rgba(30,38,31,.15));}
-  .band .t{position:absolute;left:0;right:0;bottom:0;padding:0 22px 30px;}
-  .band .t .in{max-width:1080px;margin:0 auto;}
-  .band .t p{color:#fff;font-size:19px;letter-spacing:.08em;line-height:1.9;margin:0;text-shadow:0 1px 10px rgba(0,0,0,.3);max-width:22em;}
-  @media(min-width:768px){.band .t p{font-size:24px;}}
+  /* clean photo strip (文字なし＝写真と文字を分離) */
+  .strip{position:relative;height:38vh;min-height:240px;max-height:420px;overflow:hidden;}
+  .strip .kb2{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.95);animation:kb2 20s ease-in-out infinite alternate;}
 
-  /* accordion (details) */
-  .acc{border-top:1px solid var(--line);}
-  details.item{border-bottom:1px solid var(--line);}
-  details.item>summary{list-style:none;cursor:pointer;padding:18px 2px;display:flex;align-items:center;gap:12px;}
+  /* quote band (文字だけ・写真なし＝重なりの違和感なし) */
+  .quote{background:var(--forest);color:#f0ede1;text-align:center;padding:64px 22px;position:relative;overflow:hidden;}
+  .quote::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 50% 120%,rgba(140,149,92,.28),transparent 60%);pointer-events:none;}
+  .quote .mark{font-family:var(--display);font-style:italic;font-size:44px;color:var(--accent-2);line-height:0;}
+  .quote p{position:relative;font-size:20px;letter-spacing:.1em;line-height:2.1;margin:14px auto 0;max-width:20em;}
+  @media(min-width:768px){.quote p{font-size:25px;}}
+
+  /* MENU — 見やすく再設計 */
+  .menu-sec{background:var(--cream);}
+  .acc{margin-top:20px;}
+  details.item{border:1px solid var(--line);border-radius:var(--r);margin-bottom:12px;background:var(--bg);overflow:hidden;}
+  details.item>summary{list-style:none;cursor:pointer;padding:18px 18px;display:flex;align-items:center;gap:12px;}
   details.item>summary::-webkit-details-marker{display:none;}
-  details.item>summary .nm{font-size:17px;letter-spacing:.06em;}
-  details.item>summary .en{font-family:var(--display);font-style:italic;font-size:14px;color:var(--muted);letter-spacing:.08em;}
-  details.item>summary .pm{margin-left:auto;width:20px;height:20px;position:relative;flex:none;}
-  details.item>summary .pm::before,details.item>summary .pm::after{content:"";position:absolute;background:var(--accent);}
-  details.item>summary .pm::before{left:0;right:0;top:9px;height:1.5px;}
-  details.item>summary .pm::after{top:0;bottom:0;left:9px;width:1.5px;transition:.2s;}
+  details.item>summary .cat{font-size:18px;letter-spacing:.06em;}
+  details.item>summary .caten{font-family:var(--display);font-style:italic;font-size:14px;color:var(--muted);letter-spacing:.08em;}
+  details.item>summary .pm{margin-left:auto;width:22px;height:22px;position:relative;flex:none;}
+  details.item>summary .pm::before,details.item>summary .pm::after{content:"";position:absolute;background:var(--accent);border-radius:2px;}
+  details.item>summary .pm::before{left:2px;right:2px;top:10px;height:2px;}
+  details.item>summary .pm::after{top:2px;bottom:2px;left:10px;width:2px;transition:.3s var(--ease);}
+  details.item[open]>summary{background:var(--accent-pale);}
   details.item[open]>summary .pm::after{transform:scaleY(0);}
-  .acc-body{padding:0 2px 20px;}
-  .acc-body .note{margin:0 0 10px;font-size:14px;line-height:1.9;color:var(--muted);}
-  .mrow{display:grid;grid-template-columns:1fr auto;gap:2px 12px;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--line);}
-  .mrow:last-child{border-bottom:0;}
-  .mrow .nm{font-size:15px;}
-  .mrow .pr{font-family:var(--display);font-size:18px;letter-spacing:.03em;font-variant-numeric:lining-nums tabular-nums;white-space:nowrap;text-align:right;color:var(--ink);}
-  .mrow .mn{grid-column:1/-1;font-family:var(--display);font-size:12px;letter-spacing:.1em;color:var(--muted);font-variant-numeric:lining-nums tabular-nums;}
+  .acc-body{padding:4px 18px 18px;animation:accIn .35s ease;}
+  .acc-body .note{margin:6px 0 8px;font-size:13.5px;line-height:1.9;color:var(--muted);}
+  .mitem{padding:15px 2px;border-bottom:1px solid var(--line);}
+  .mitem:last-child{border-bottom:0;}
+  .mitem .top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;}
+  .mitem .nm{font-size:16px;letter-spacing:.03em;}
+  .mitem .pr{font-family:var(--display);font-size:21px;color:var(--accent-deep);font-variant-numeric:lining-nums tabular-nums;white-space:nowrap;}
+  .mitem .dur{display:inline-block;font-family:var(--display);font-size:12px;letter-spacing:.14em;color:var(--muted);margin-top:2px;font-variant-numeric:lining-nums tabular-nums;}
 
-  /* tabs (radio hack) */
+  /* reservation */
+  .resv{background:var(--surface);}
   .tabs input{position:absolute;opacity:0;width:0;height:0;pointer-events:none;}
-  .tablist{display:flex;gap:8px;border-bottom:1px solid var(--line);margin-top:8px;flex-wrap:wrap;}
-  .tablist label{padding:12px 18px;margin-bottom:-1px;border-bottom:2px solid transparent;color:var(--muted);
-    font-size:15px;letter-spacing:.08em;cursor:pointer;}
+  .tablist{display:flex;gap:8px;border-bottom:1px solid var(--line);margin-top:8px;flex-wrap:wrap;justify-content:center;}
+  .tablist label{padding:12px 18px;margin-bottom:-1px;border-bottom:2px solid transparent;color:var(--muted);font-size:15px;letter-spacing:.08em;cursor:pointer;transition:.2s;}
+  .tablist label:hover{color:var(--accent-deep);}
   #tb-g:checked~.tablist label[for="tb-g"],#tb-c:checked~.tablist label[for="tb-c"]{color:var(--accent-deep);border-bottom-color:var(--accent);}
-  .tabpanel{display:none;padding-top:22px;}
-  #tb-g:checked~.panels .p-g{display:block;}
-  #tb-c:checked~.panels .p-c{display:block;}
-  .calbox{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--cream);}
-  .calbox iframe{width:100%;height:660px;border:0;display:block;background:var(--cream);}
-  .calnote{font-size:13px;color:var(--muted);margin:10px 2px 0;}
+  .tabpanel{display:none;padding-top:24px;}
+  #tb-g:checked~.panels .p-g{display:block;animation:accIn .4s ease;}
+  #tb-c:checked~.panels .p-c{display:block;animation:accIn .4s ease;}
+  .calcard{background:var(--cream);border:1px solid var(--line);border-radius:var(--r);padding:26px 22px;text-align:center;}
+  .calcard .note{margin:0 0 18px;color:var(--muted);font-size:14.5px;line-height:1.95;}
+  .calnote{font-size:13px;color:var(--muted);margin:14px 2px 0;text-align:center;}
   .calnote a{color:var(--accent-deep);}
 
-  /* info accordion / small cards */
-  .infogrid{display:grid;gap:14px;margin-top:24px;}
-  @media(min-width:600px){.infogrid{grid-template-columns:repeat(3,1fr);}}
-  .info-i{border-top:1px solid var(--accent);padding-top:11px;}
-  .info-i .l{font-size:12px;letter-spacing:.14em;color:var(--accent);margin:0 0 3px;}
-  .info-i .t{margin:0;font-size:14.5px;line-height:1.85;}
-
   /* access */
-  .access .grid{display:grid;gap:24px;}
+  .access .grid{display:grid;gap:26px;}
   @media(min-width:820px){.access .grid{grid-template-columns:1fr 1fr;gap:48px;align-items:start;}}
   .arow{border-top:1px solid var(--line);padding-top:11px;margin-top:14px;}
   .arow:first-child{margin-top:0;}
   .arow .l{font-size:12px;letter-spacing:.16em;color:var(--muted);margin:0 0 4px;}
   .arow .t{margin:0;font-size:15px;line-height:1.85;white-space:pre-line;font-variant-numeric:lining-nums tabular-nums;}
-  .mapframe{border:6px solid var(--cream);outline:1px solid var(--line);aspect-ratio:4/3;margin-top:10px;border-radius:2px;overflow:hidden;}
+  .mapframe{border:6px solid var(--cream);outline:1px solid var(--line);aspect-ratio:4/3;margin-top:10px;border-radius:3px;overflow:hidden;}
   .mapframe iframe{width:100%;height:100%;border:0;display:block;}
 
   /* shop */
-  .shop{background:var(--surface);}
+  .shop{background:var(--bg);}
   .shop .btns{margin-top:22px;display:flex;flex-direction:column;gap:11px;}
-  @media(min-width:600px){.shop .btns{flex-direction:row;}}
+  @media(min-width:600px){.shop .btns{flex-direction:row;justify-content:center;}}
 
-  footer.site{background:var(--forest);color:#d9d5c4;padding:46px 0;}
+  footer.site{background:var(--forest);color:#d9d5c4;padding:48px 0;}
   footer.site .cols{display:grid;gap:26px;}
   @media(min-width:768px){footer.site .cols{grid-template-columns:1.2fr 1fr 1fr;gap:36px;}}
   footer.site .logo{display:inline-flex;padding:12px 16px;background:var(--cream);border-radius:4px;}
@@ -184,7 +204,7 @@
   <div class="bar">
     <a class="logo" href="index.html"><img src="logo.png" alt="LOKOMAIKAI"></a>
     <nav class="navlinks">
-      <a href="#concept">LOKOMAIKAIについて</a>
+      <a href="#concept">コンセプト</a>
       <a href="#menu">メニュー</a>
       <a href="#reserve">ご予約</a>
       <a href="#access">アクセス</a>
@@ -197,7 +217,7 @@
   </div>
   <nav class="menu-panel">
     <div class="inner">
-      <a href="#concept"><span class="no">01</span><span class="lb">LOKOMAIKAI について</span><span class="en">Concept</span></a>
+      <a href="#concept"><span class="no">01</span><span class="lb">コンセプト</span><span class="en">Concept</span></a>
       <a href="#menu"><span class="no">02</span><span class="lb">メニューとお値段</span><span class="en">Menu</span></a>
       <a href="#reserve"><span class="no">03</span><span class="lb">ご予約</span><span class="en">Reservation</span></a>
       <a href="#access"><span class="no">04</span><span class="lb">場所・アクセス</span><span class="en">Access</span></a>
@@ -206,105 +226,121 @@
   </nav>
 </header>
 
-<!-- HERO：写真主役・文字は左下に少なめ -->
+<!-- HERO -->
 <section class="hero">
-  <img src="exterior.png" alt="LOKOMAIKAI 外観">
+  <img class="kb" src="exterior.png" alt="LOKOMAIKAI 外観">
   <div class="grad"></div>
   <div class="copy"><div class="in">
     <p class="place">Lokomaikaʻi — Yomitan, Okinawa</p>
-    <h1>思いやりの手が、からだをほどく。</h1>
+    <h1>がんばったからだに、<br>ハワイのごほうび。</h1>
+    <p class="sub">読谷の小さなハワイで、ロミロミにほどかれる時間を。</p>
     <div class="cta"><a class="btn btn-onphoto btn-lg" href="#reserve">ご予約はこちら</a></div>
   </div></div>
+  <div class="scroll">SCROLL</div>
 </section>
 
 <!-- CONCEPT -->
 <section class="section concept" id="concept">
   <div class="wrap">
-    <div class="eyebrow"><span class="deco"></span><span class="en">Concept</span><span class="jp">コンセプト</span></div>
-    <div class="grid" style="margin-top:36px;">
-      <figure>
+    <div class="head">
+      <span class="en" data-rev>Concept</span>
+      <span class="jp" data-rev style="--d:.1s">コンセプト</span>
+      <div class="deco" data-rev-line style="--d:.2s"></div>
+    </div>
+    <div class="grid">
+      <figure data-rev-x>
         <img class="photo photo-mat" src="interior.png" alt="施術を行う店内の一室" style="aspect-ratio:4/3;">
         <figcaption class="cap">読谷村ときわ・店内の一室にて</figcaption>
       </figure>
       <div>
-        <div class="rule"></div>
-        <h2 class="title">ハワイアン雑貨のならぶ<br>店の奥、静かな一室で。</h2>
-        <p class="lead">ロミロミの手わざと、ハワイの言葉に宿る心で、あなたの一日をゆるめます。強さや速さではなく、その日のからだに合わせて手を添えること。それが当店のエステです。</p>
-        <div class="words">
+        <div class="rule" data-rev></div>
+        <h2 class="title" data-rev style="--d:.06s">雑貨店の奥に、<br>小さなハワイがある。</h2>
+        <p class="lead" data-rev style="--d:.12s">ハワイに伝わる手わざ「ロミロミ」。前腕でゆっくりと流しながら、こわばりのある場所をていねいにほどいていきます。強さや速さではなく、その日のからだに合わせて手を添える。それが当店のエステです。</p>
+        <div class="words" data-rev style="--d:.18s">
           <div class="word"><b>loko</b><span>寛大な、心の広い</span></div>
           <div class="word"><b>maikaʻi</b><span>素晴らしい、善い</span></div>
         </div>
-        <p class="lead">ふたつ合わせて「LOKOMAIKAI」。人に優しく、思いやりを持って接する心をあらわす、ハワイの言葉です。</p>
+        <p class="lead" data-rev style="--d:.24s">ふたつ合わせて「LOKOMAIKAI」。人に優しく、思いやりを持って接する心をあらわす、ハワイの言葉です。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BAND photo -->
-<section class="band">
-  <img src="interior.png" alt="施術室">
-  <div class="grad"></div>
-  <div class="t"><div class="in"><p>他のお客様と一緒にならない、<br>一室だけのプライベートな時間。</p></div></div>
-</section>
+<!-- PHOTO STRIP（文字なし） -->
+<section class="strip"><img class="kb2" src="interior.png" alt="店内の一室"></section>
 
-<!-- MENU（アコーディオン） -->
-<section class="section" id="menu">
+<!-- MENU -->
+<section class="section menu-sec" id="menu">
   <div class="wrap narrow">
-    <div class="eyebrow"><span class="deco"></span><span class="en">Menu</span><span class="jp">メニュー</span></div>
-    <p class="lead" style="text-align:center;font-size:13.5px;margin-top:14px;">※ 以下は仮のメニューです。内容・お値段は決まりしだい差し替えます。表示は税込。</p>
+    <div class="head">
+      <span class="en" data-rev>Menu</span>
+      <span class="jp" data-rev style="--d:.1s">メニューとお値段</span>
+      <div class="deco" data-rev-line style="--d:.2s"></div>
+    </div>
+    <p class="lead" data-rev style="text-align:center;font-size:13.5px;margin-top:0;">※ 以下は仮のメニューです。内容・お値段は決まりしだい差し替えます。表示は税込。</p>
 
-    <div class="acc" style="margin-top:26px;">
-      <details class="item" open>
-        <summary><span class="nm">ロミロミ</span><span class="en">Lomilomi</span><span class="pm"></span></summary>
+    <div class="acc">
+      <details class="item" open data-rev>
+        <summary><span class="cat">ロミロミ</span><span class="caten">Lomilomi</span><span class="pm"></span></summary>
         <div class="acc-body">
           <p class="note">ハワイに伝わる手わざ。前腕でゆっくりと流していきます。オイルはお肌に合わせてお選びいただけます。</p>
-          <div class="mrow"><span class="nm">背中・肩まわり</span><span class="pr">¥6,600</span><span class="mn">40 min</span></div>
-          <div class="mrow"><span class="nm">上半身（背中・肩・腕・首）</span><span class="pr">¥8,800</span><span class="mn">60 min</span></div>
-          <div class="mrow"><span class="nm">全身</span><span class="pr">¥12,800</span><span class="mn">90 min</span></div>
-          <div class="mrow"><span class="nm">全身 じっくり</span><span class="pr">¥16,500</span><span class="mn">120 min</span></div>
+          <div class="mitem"><div class="top"><span class="nm">背中・肩まわり</span><span class="pr">¥6,600</span></div><span class="dur">40 min</span></div>
+          <div class="mitem"><div class="top"><span class="nm">上半身（背中・肩・腕・首）</span><span class="pr">¥8,800</span></div><span class="dur">60 min</span></div>
+          <div class="mitem"><div class="top"><span class="nm">全身</span><span class="pr">¥12,800</span></div><span class="dur">90 min</span></div>
+          <div class="mitem"><div class="top"><span class="nm">全身 じっくり</span><span class="pr">¥16,500</span></div><span class="dur">120 min</span></div>
         </div>
       </details>
-      <details class="item">
-        <summary><span class="nm">フェイシャル</span><span class="en">Facial</span><span class="pm"></span></summary>
+      <details class="item" data-rev style="--d:.06s">
+        <summary><span class="cat">フェイシャル</span><span class="caten">Facial</span><span class="pm"></span></summary>
         <div class="acc-body">
           <p class="note">沖縄の日差しで疲れたお肌に。クレンジングから保湿まで、ひととおり。</p>
-          <div class="mrow"><span class="nm">ベーシック</span><span class="pr">¥8,800</span><span class="mn">50 min</span></div>
-          <div class="mrow"><span class="nm">デコルテまで</span><span class="pr">¥11,000</span><span class="mn">70 min</span></div>
+          <div class="mitem"><div class="top"><span class="nm">ベーシック</span><span class="pr">¥8,800</span></div><span class="dur">50 min</span></div>
+          <div class="mitem"><div class="top"><span class="nm">デコルテまで</span><span class="pr">¥11,000</span></div><span class="dur">70 min</span></div>
         </div>
       </details>
-      <details class="item">
-        <summary><span class="nm">組み合わせ</span><span class="en">Combination</span><span class="pm"></span></summary>
+      <details class="item" data-rev style="--d:.12s">
+        <summary><span class="cat">組み合わせ</span><span class="caten">Combination</span><span class="pm"></span></summary>
         <div class="acc-body">
           <p class="note">はじめての方には、上半身＋ヘッドスパをおすすめしています。</p>
-          <div class="mrow"><span class="nm">全身＋フェイシャル</span><span class="pr">¥21,000</span><span class="mn">150 min</span></div>
-          <div class="mrow"><span class="nm">上半身＋ヘッドスパ</span><span class="pr">¥13,200</span><span class="mn">90 min</span></div>
+          <div class="mitem"><div class="top"><span class="nm">全身＋フェイシャル</span><span class="pr">¥21,000</span></div><span class="dur">150 min</span></div>
+          <div class="mitem"><div class="top"><span class="nm">上半身＋ヘッドスパ</span><span class="pr">¥13,200</span></div><span class="dur">90 min</span></div>
         </div>
       </details>
-      <details class="item">
-        <summary><span class="nm">オプション</span><span class="en">Option</span><span class="pm"></span></summary>
+      <details class="item" data-rev style="--d:.18s">
+        <summary><span class="cat">オプション</span><span class="caten">Option</span><span class="pm"></span></summary>
         <div class="acc-body">
-          <div class="mrow"><span class="nm">ヘッドスパ（30分）</span><span class="pr">¥3,300</span></div>
-          <div class="mrow"><span class="nm">フットケア（20分）</span><span class="pr">¥2,200</span></div>
-          <div class="mrow"><span class="nm">ホットストーン追加</span><span class="pr">¥1,650</span></div>
+          <div class="mitem"><div class="top"><span class="nm">ヘッドスパ（30分）</span><span class="pr">¥3,300</span></div></div>
+          <div class="mitem"><div class="top"><span class="nm">フットケア（20分）</span><span class="pr">¥2,200</span></div></div>
+          <div class="mitem"><div class="top"><span class="nm">ホットストーン追加</span><span class="pr">¥1,650</span></div></div>
         </div>
       </details>
-      <details class="item">
-        <summary><span class="nm">ご利用にあたって</span><span class="en">Notes</span><span class="pm"></span></summary>
+      <details class="item" data-rev style="--d:.24s">
+        <summary><span class="cat">ご利用にあたって</span><span class="caten">Notes</span><span class="pm"></span></summary>
         <div class="acc-body">
-          <p class="note">お着替えとタオルはご用意しています。妊娠中の方、通院中の方はご予約時にお知らせください。所要時間はお着替えとカウンセリングを含め、コース時間＋20分ほど。お支払いは現金・各種クレジットカード・電子マネー。キャンセルは前日までにご連絡ください。</p>
+          <p class="note" style="margin-bottom:0;">お着替えとタオルはご用意しています。妊娠中の方、通院中の方はご予約時にお知らせください。所要時間はお着替えとカウンセリングを含め、コース時間＋20分ほど。お支払いは現金・各種クレジットカード・電子マネー。キャンセルは前日までにご連絡ください。</p>
         </div>
       </details>
     </div>
   </div>
 </section>
 
-<!-- RESERVATION（ページ内タブ＋カレンダー埋め込み） -->
-<section class="section" id="reserve" style="background:var(--surface);">
-  <div class="wrap narrow">
-    <div class="eyebrow"><span class="deco"></span><span class="en">Reservation</span><span class="jp">ご予約</span></div>
-    <p class="lead" style="text-align:center;margin-top:14px;">下のカレンダーで日にちを選ぶと、その日の空いている時間が表示されます。そのままこのページでご予約いただけます。</p>
+<!-- QUOTE BAND（文字だけ） -->
+<section class="quote">
+  <div class="mark" data-rev>”</div>
+  <p data-rev style="--d:.1s">他のお客様と一緒にならない、<br>一室だけのプライベートな時間。</p>
+</section>
 
-    <div class="tabs" style="margin-top:22px;">
+<!-- RESERVATION -->
+<section class="section resv" id="reserve">
+  <div class="wrap narrow">
+    <div class="head">
+      <span class="en" data-rev>Reservation</span>
+      <span class="jp" data-rev style="--d:.1s">ご予約</span>
+      <div class="deco" data-rev-line style="--d:.2s"></div>
+    </div>
+    <p class="lead" data-rev style="text-align:center;margin-top:0;">ボタンを押すと、この画面の上に予約カレンダーが開きます。日にちを選ぶと空いている時間が出て、そのままご予約いただけます（別のサイトには移動しません）。</p>
+
+    <div class="tabs" data-rev style="--d:.1s;margin-top:24px;">
       <input type="radio" name="rtab" id="tb-g" checked>
       <input type="radio" name="rtab" id="tb-c">
       <div class="tablist">
@@ -313,35 +349,37 @@
       </div>
       <div class="panels">
         <div class="tabpanel p-g">
-          <p class="note" style="margin:0 0 18px;color:var(--muted);">下のボタンを押すと、この画面の上に予約カレンダーが開きます。日にちを選ぶと空いている時間が出て、そのままご予約いただけます（別のサイトには移動しません）。</p>
-          <div class="calbtn" style="display:flex;justify-content:center;padding:6px 0;">
-            <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-            <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-            <script>
-            (function(){
-              var target = document.currentScript;
-              function loadBtn(){
-                if (window.calendar && window.calendar.schedulingButton){
-                  window.calendar.schedulingButton.load({
-                    url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0rQqFVmKJxVihLuj3-FxrxySU6NwZSqMWwylu4l7gBf78Z1GbUWYKFztRsBzi-ziZtDzQd7PhN?gv=true',
-                    color: '#6e7b40',
-                    label: '予約時間を見て予約する',
-                    target: target
-                  });
-                } else { setTimeout(loadBtn, 300); }
-              }
-              if (document.readyState === 'complete') loadBtn();
-              else window.addEventListener('load', loadBtn);
-            })();
-            </script>
+          <div class="calcard">
+            <p class="note">ハワイの手わざを、ご希望の日時で。<br>下のボタンから予約カレンダーが開きます。</p>
+            <div class="calbtn" style="display:flex;justify-content:center;">
+              <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+              <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+              <script>
+              (function(){
+                var target = document.currentScript;
+                function loadBtn(){
+                  if (window.calendar && window.calendar.schedulingButton){
+                    window.calendar.schedulingButton.load({
+                      url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0rQqFVmKJxVihLuj3-FxrxySU6NwZSqMWwylu4l7gBf78Z1GbUWYKFztRsBzi-ziZtDzQd7PhN?gv=true',
+                      color: '#6e7b40',
+                      label: '予約時間を見て予約する',
+                      target: target
+                    });
+                  } else { setTimeout(loadBtn, 300); }
+                }
+                if (document.readyState === 'complete') loadBtn();
+                else window.addEventListener('load', loadBtn);
+              })();
+              </script>
+            </div>
           </div>
-          <p class="calnote" style="margin-top:16px;text-align:center;">※ ボタンが表示されないときは <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0rQqFVmKJxVihLuj3-FxrxySU6NwZSqMWwylu4l7gBf78Z1GbUWYKFztRsBzi-ziZtDzQd7PhN?gv=true" target="_blank" rel="noopener">こちら</a> からもご予約いただけます。</p>
+          <p class="calnote">※ ボタンが表示されないときは <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0rQqFVmKJxVihLuj3-FxrxySU6NwZSqMWwylu4l7gBf78Z1GbUWYKFztRsBzi-ziZtDzQd7PhN?gv=true" target="_blank" rel="noopener">こちら</a> からもご予約いただけます。</p>
         </div>
         <div class="tabpanel p-c">
-          <div class="calbox" style="padding:26px;text-align:center;">
-            <p class="note" style="margin:0;color:var(--muted);">企業様（福利厚生）でのご利用は、専用ページのお問い合わせから承ります。人数・ご予算に合わせてご案内します。</p>
+          <div class="calcard">
+            <p class="note" style="margin:0;">企業様（福利厚生）でのご利用は、専用ページのお問い合わせから承ります。人数・ご予算に合わせてご案内します。</p>
+            <div style="margin-top:18px;"><a class="btn btn-line btn-lg" href="corporate.html#contact">福利厚生のお問い合わせへ</a></div>
           </div>
-          <div style="margin-top:16px;text-align:center;"><a class="btn btn-line btn-lg" href="corporate.html#contact">福利厚生のお問い合わせへ</a></div>
         </div>
       </div>
     </div>
@@ -351,16 +389,20 @@
 <!-- ACCESS -->
 <section class="section access" id="access">
   <div class="wrap">
-    <div class="eyebrow"><span class="deco"></span><span class="en">Access</span><span class="jp">アクセス</span></div>
-    <div class="grid" style="margin-top:36px;">
-      <figure>
+    <div class="head">
+      <span class="en" data-rev>Access</span>
+      <span class="jp" data-rev style="--d:.1s">場所・アクセス</span>
+      <div class="deco" data-rev-line style="--d:.2s"></div>
+    </div>
+    <div class="grid">
+      <figure data-rev-x>
         <img class="photo photo-mat" src="exterior.png" alt="LOKOMAIKAI の外観" style="aspect-ratio:4/3;">
         <figcaption class="cap">赤い OPEN の看板が目印です</figcaption>
         <div class="mapframe">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3574.460824003641!2d127.7548291107244!3d26.37629577687495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e5110070dffec5%3A0x39c2b6ea77e285d5!2sLOKOMAIKAI!5e0!3m2!1sja!2sus!4v1786445127894!5m2!1sja!2sus" title="LOKOMAIKAI の地図" loading="lazy" allowfullscreen="" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
       </figure>
-      <div>
+      <div data-rev style="--d:.08s">
         <div class="rule"></div>
         <h2 class="title">場所・アクセス</h2>
         <div style="margin-top:18px;">
@@ -382,10 +424,10 @@
 <!-- SHOP -->
 <section class="section shop">
   <div class="wrap narrow" style="text-align:center;">
-    <p class="kicker" style="margin-bottom:6px;">The Shop</p>
-    <h2 class="title">ハワイアン雑貨店 LOKOMAIKAI</h2>
-    <p class="lead">沖縄・読谷村ときわにある、小さなハワイアンショップです。ハワイで見つけた雑貨やアクセサリー、フード、ハワイアンジュエリーなどを取り扱っています。エステはこの同じ店内、奥の一室で行います。</p>
-    <div class="btns" style="justify-content:center;">
+    <p class="kicker" data-rev style="margin-bottom:6px;">The Shop</p>
+    <h2 class="title" data-rev style="--d:.06s">ハワイアン雑貨店 LOKOMAIKAI</h2>
+    <p class="lead" data-rev style="--d:.12s">沖縄・読谷村ときわにある、小さなハワイアンショップです。ハワイで見つけた雑貨やアクセサリー、フード、ハワイアンジュエリーなどを取り扱っています。エステはこの同じ店内、奥の一室で行います。</p>
+    <div class="btns" data-rev style="--d:.18s">
       <a class="btn btn-primary btn-lg" href="https://hanahou.ne.jp/" target="_blank" rel="noopener">雑貨店のページへ</a>
       <a class="btn btn-line btn-lg" href="corporate.html">福利厚生のご案内</a>
     </div>
@@ -404,7 +446,7 @@
         <span>営業 13:00〜18:00／土曜・日曜</span>
       </div>
       <div class="fnav">
-        <a href="#concept">LOKOMAIKAI について</a>
+        <a href="#concept">コンセプト</a>
         <a href="#menu">メニューとお値段</a>
         <a href="#reserve">ご予約</a>
         <a href="#access">場所・アクセス</a>
@@ -414,6 +456,20 @@
     <div class="copy">© 2026 LOKOMAIKAI</div>
   </div>
 </footer>
+
+<script>
+/* スクロール出現アニメ。JSが動く時だけ適用。失敗しても最後は必ず表示（真っ白防止）。 */
+(function(){
+  var els = document.querySelectorAll('[data-rev],[data-rev-x],[data-rev-line]');
+  function showAll(){ for(var i=0;i<els.length;i++){ els[i].classList.add('in'); } }
+  if(!('IntersectionObserver' in window)){ showAll(); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { threshold:0.12, rootMargin:'0px 0px -8% 0px' });
+  for(var i=0;i<els.length;i++){ io.observe(els[i]); }
+  setTimeout(showAll, 3500); /* 失敗時の保険 */
+})();
+</script>
 
 </body>
 </html>
