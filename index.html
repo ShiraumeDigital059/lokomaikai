@@ -313,10 +313,29 @@
       </div>
       <div class="panels">
         <div class="tabpanel p-g">
-          <div class="calbox">
-            <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0rQqFVmKJxVihLuj3-FxrxySU6NwZSqMWwylu4l7gBf78Z1GbUWYKFztRsBzi-ziZtDzQd7PhN?gv=true" title="ご予約カレンダー" loading="lazy"></iframe>
+          <p class="note" style="margin:0 0 18px;color:var(--muted);">下のボタンを押すと、この画面の上に予約カレンダーが開きます。日にちを選ぶと空いている時間が出て、そのままご予約いただけます（別のサイトには移動しません）。</p>
+          <div class="calbtn" style="display:flex;justify-content:center;padding:6px 0;">
+            <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+            <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+            <script>
+            (function(){
+              var target = document.currentScript;
+              function loadBtn(){
+                if (window.calendar && window.calendar.schedulingButton){
+                  window.calendar.schedulingButton.load({
+                    url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0rQqFVmKJxVihLuj3-FxrxySU6NwZSqMWwylu4l7gBf78Z1GbUWYKFztRsBzi-ziZtDzQd7PhN?gv=true',
+                    color: '#6e7b40',
+                    label: '予約時間を見て予約する',
+                    target: target
+                  });
+                } else { setTimeout(loadBtn, 300); }
+              }
+              if (document.readyState === 'complete') loadBtn();
+              else window.addEventListener('load', loadBtn);
+            })();
+            </script>
           </div>
-          <p class="calnote">※ うまく表示されないときは <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0rQqFVmKJxVihLuj3-FxrxySU6NwZSqMWwylu4l7gBf78Z1GbUWYKFztRsBzi-ziZtDzQd7PhN?gv=true" target="_blank" rel="noopener">こちら</a>から開けます。</p>
+          <p class="calnote" style="margin-top:16px;text-align:center;">※ ボタンが表示されないときは <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0rQqFVmKJxVihLuj3-FxrxySU6NwZSqMWwylu4l7gBf78Z1GbUWYKFztRsBzi-ziZtDzQd7PhN?gv=true" target="_blank" rel="noopener">こちら</a> からもご予約いただけます。</p>
         </div>
         <div class="tabpanel p-c">
           <div class="calbox" style="padding:26px;text-align:center;">
