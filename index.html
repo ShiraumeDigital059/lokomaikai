@@ -99,17 +99,17 @@
     .navlinks a:hover{color:var(--accent);}}
 
   /* hero — 写真主役・強いフック */
-  .hero{position:relative;height:86vh;min-height:540px;max-height:800px;overflow:hidden;background:var(--forest);}
-  .hero .kb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.95) contrast(1.02);animation:kb 22s ease-in-out infinite alternate;}
-  .hero .grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,34,27,.78) 0%,rgba(26,34,27,.3) 38%,rgba(26,34,27,0) 66%);}
+  .hero{position:relative;height:80vh;min-height:500px;max-height:740px;overflow:hidden;background:var(--forest);}
+  .hero .kb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.98) contrast(1.02);animation:kb 22s ease-in-out infinite alternate;}
+  .hero .grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,34,27,.9) 0%,rgba(26,34,27,.6) 24%,rgba(26,34,27,.12) 54%,rgba(26,34,27,0) 78%);}
   .hero .copy{position:absolute;left:0;right:0;bottom:0;padding:0 22px 46px;}
   .hero .copy .in{max-width:1080px;margin:0 auto;}
   .hero .place{font-family:var(--display);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#e9e6d2;margin:0 0 14px;animation:upIn .9s .15s both var(--ease);}
-  .hero h1{color:#fff;font-size:33px;letter-spacing:.09em;line-height:1.62;font-weight:500;text-shadow:0 2px 16px rgba(0,0,0,.35);animation:upIn 1s .3s both var(--ease);}
-  .hero .sub{color:#f1eede;font-size:15px;letter-spacing:.06em;margin:14px 0 0;text-shadow:0 1px 10px rgba(0,0,0,.4);animation:upIn 1s .5s both var(--ease);}
+  .hero h1{color:#fff;font-size:26px;letter-spacing:.03em;line-height:1.62;font-weight:500;text-shadow:0 2px 16px rgba(0,0,0,.4);animation:upIn 1s .3s both var(--ease);}
+  .hero .sub{color:#f1eede;font-size:14px;letter-spacing:.04em;margin:12px 0 0;text-shadow:0 1px 10px rgba(0,0,0,.45);animation:upIn 1s .5s both var(--ease);}
   .hero .cta{margin-top:26px;animation:upIn 1s .68s both var(--ease);}
   .hero .scroll{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);color:rgba(255,255,255,.7);font-family:var(--display);font-size:10px;letter-spacing:.3em;animation:floaty 2.4s ease-in-out infinite;}
-  @media(min-width:768px){.hero h1{font-size:46px;} .hero .sub{font-size:17px;} .hero .copy{padding-bottom:60px;}}
+  @media(min-width:768px){.hero h1{font-size:42px;} .hero .sub{font-size:17px;} .hero .copy{padding-bottom:60px;}}
 
   /* concept */
   .concept .grid{display:grid;gap:28px;}
@@ -166,8 +166,13 @@
   .tabpanel{display:none;padding-top:24px;}
   #tb-g:checked~.panels .p-g{display:block;animation:accIn .4s ease;}
   #tb-c:checked~.panels .p-c{display:block;animation:accIn .4s ease;}
-  .calcard{background:var(--cream);border:1px solid var(--line);border-radius:var(--r);padding:26px 22px;text-align:center;}
+  .calcard{background:var(--cream);border:1px solid var(--line);border-radius:var(--r);padding:36px 24px;text-align:center;box-shadow:0 22px 46px -32px rgba(40,51,42,.5);}
   .calcard .note{margin:0 0 18px;color:var(--muted);font-size:14.5px;line-height:1.95;}
+  .calcard .rt{font-size:18px;letter-spacing:.06em;margin:0;color:var(--ink);}
+  .calcard .rt::before{content:"";display:block;width:34px;height:1px;background:var(--accent);margin:0 auto 16px;}
+  .calcard .rd{font-size:14px;line-height:1.95;color:var(--muted);margin:12px auto 24px;max-width:26em;}
+  .calcard .rmeta{margin-top:18px;font-size:12.5px;letter-spacing:.05em;color:var(--muted);}
+  .calcard .resv-open{min-width:min(320px,100%);}
   .calnote{font-size:13px;color:var(--muted);margin:14px 2px 0;text-align:center;}
   .calnote a{color:var(--accent-deep);}
 
@@ -228,7 +233,7 @@
 
 <!-- HERO -->
 <section class="hero">
-  <img class="kb" src="exterior.png" alt="LOKOMAIKAI 外観">
+  <img class="kb" src="interior.png" alt="LOKOMAIKAI 店内の一室">
   <div class="grad"></div>
   <div class="copy"><div class="in">
     <p class="place">Lokomaikaʻi — Yomitan, Okinawa</p>
@@ -249,7 +254,7 @@
     </div>
     <div class="grid">
       <figure data-rev-x>
-        <img class="photo photo-mat" src="interior.png" alt="施術を行う店内の一室" style="aspect-ratio:4/3;">
+        <img class="photo photo-mat" src="lounge.jpg" alt="施術を行う店内の一室" style="aspect-ratio:4/3;">
         <figcaption class="cap">読谷村ときわ・店内の一室にて</figcaption>
       </figure>
       <div>
@@ -267,7 +272,7 @@
 </section>
 
 <!-- PHOTO STRIP（文字なし） -->
-<section class="strip"><img class="kb2" src="interior.png" alt="店内の一室"></section>
+<section class="strip"><img class="kb2" src="goods.jpg" alt="ハワイアン雑貨"></section>
 
 <!-- MENU -->
 <section class="section menu-sec" id="menu">
@@ -350,30 +355,39 @@
       <div class="panels">
         <div class="tabpanel p-g">
           <div class="calcard">
-            <p class="note">ハワイの手わざを、ご希望の日時で。<br>下のボタンから予約カレンダーが開きます。</p>
-            <div class="calbtn" style="display:flex;justify-content:center;">
-              <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-              <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-              <script>
-              (function(){
-                var target = document.currentScript;
-                function loadBtn(){
-                  if (window.calendar && window.calendar.schedulingButton){
-                    window.calendar.schedulingButton.load({
-                      url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0rQqFVmKJxVihLuj3-FxrxySU6NwZSqMWwylu4l7gBf78Z1GbUWYKFztRsBzi-ziZtDzQd7PhN?gv=true',
-                      color: '#6e7b40',
-                      label: '予約時間を見て予約する',
-                      target: target
-                    });
-                  } else { setTimeout(loadBtn, 300); }
-                }
-                if (document.readyState === 'complete') loadBtn();
-                else window.addEventListener('load', loadBtn);
-              })();
-              </script>
-            </div>
+            <p class="rt">ハワイの手わざを、ご希望の日時で。</p>
+            <p class="rd">下のボタンを押すと、この画面の上に予約カレンダーが開きます。空いている日にちと時間を選んで、そのままご予約いただけます。</p>
+            <a class="btn btn-primary btn-lg resv-open" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0rQqFVmKJxVihLuj3-FxrxySU6NwZSqMWwylu4l7gBf78Z1GbUWYKFztRsBzi-ziZtDzQd7PhN?gv=true" target="_blank" rel="noopener">予約時間を見て予約する</a>
+            <div class="rmeta">営業：土曜・日曜 13:00〜18:00 ／ 所要：コース時間＋20分ほど</div>
+            <div id="gcalHost" aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);left:-9999px;"><span id="gcalAnchor"></span></div>
+            <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+            <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+            <script>
+            (function(){
+              var anchor = document.getElementById('gcalAnchor');
+              var host = document.getElementById('gcalHost');
+              function loadBtn(){
+                if (window.calendar && window.calendar.schedulingButton){
+                  window.calendar.schedulingButton.load({
+                    url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0rQqFVmKJxVihLuj3-FxrxySU6NwZSqMWwylu4l7gBf78Z1GbUWYKFztRsBzi-ziZtDzQd7PhN?gv=true',
+                    color: '#6e7b40',
+                    label: 'ご予約',
+                    target: anchor
+                  });
+                } else { setTimeout(loadBtn, 300); }
+              }
+              if (document.readyState === 'complete') loadBtn();
+              else window.addEventListener('load', loadBtn);
+              var open = document.querySelector('.resv-open');
+              if (open){
+                open.addEventListener('click', function(e){
+                  var g = host.querySelector('button, a');
+                  if (g){ e.preventDefault(); g.click(); }
+                });
+              }
+            })();
+            </script>
           </div>
-          <p class="calnote">※ ボタンが表示されないときは <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0rQqFVmKJxVihLuj3-FxrxySU6NwZSqMWwylu4l7gBf78Z1GbUWYKFztRsBzi-ziZtDzQd7PhN?gv=true" target="_blank" rel="noopener">こちら</a> からもご予約いただけます。</p>
         </div>
         <div class="tabpanel p-c">
           <div class="calcard">
