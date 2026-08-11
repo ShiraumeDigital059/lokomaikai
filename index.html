@@ -7,423 +7,384 @@
 <meta name="description" content="沖縄・読谷村のハワイアンショップ LOKOMAIKAI 店内の一室で行うエステ。ロミロミを中心に、その日のからだに合わせて。ご予約・メニュー・アクセスはこちら。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --color-bg:#f3f2f2; --color-surface:#eae9e9; --color-text:#201f1d;
-    --color-accent:#b68235; --color-divider:color-mix(in srgb,#201f1d 16%,transparent);
-    --color-neutral-100:#f8f4f4; --color-neutral-200:#eae7e7; --color-neutral-300:#d7d3d3;
-    --color-neutral-400:#bab6b6; --color-neutral-500:#9b9797; --color-neutral-600:#7d7979;
-    --color-neutral-700:#605d5d; --color-neutral-800:#444141; --color-neutral-900:#2d2b2b;
-    --color-accent-100:#fff3e4; --color-accent-200:#ffe3bf; --color-accent-300:#facb8d;
-    --color-accent-400:#e1ad66; --color-accent-500:#c28d41; --color-accent-600:#a06f24;
-    --color-accent-700:#7d5411; --color-accent-800:#5a3b0a; --color-accent-900:#3a270d;
-    --font-heading:"Cormorant Garamond","Noto Serif JP",serif;
-    --font-body:"Noto Serif JP",serif;
-    --space-1:4.6px; --space-2:9.2px; --space-3:13.8px; --space-4:18.4px; --space-6:27.6px; --space-8:36.8px;
-    --radius-sm:2px; --radius-md:4px; --radius-lg:7px;
-    --shadow-sm:0 1px 2px color-mix(in srgb,#2d2b2b 14%,transparent);
-    --shadow-md:0 3px 10px color-mix(in srgb,#2d2b2b 16%,transparent);
-    --shadow-lg:0 12px 32px color-mix(in srgb,#2d2b2b 22%,transparent);
+  :root{
+    --bg:#f3f2f2; --surface:#eae9e9; --ink:#201f1d;
+    --accent:#b68235; --accent-300:#facb8d; --accent-400:#e1ad66; --accent-700:#7d5411;
+    --n100:#f8f4f4; --n200:#eae7e7; --n600:#7d7979; --n700:#605d5d; --n800:#444141; --n900:#2d2b2b;
+    --divider:color-mix(in srgb,#201f1d 15%,transparent);
+    --serif:"Noto Serif JP",serif; --display:"Cormorant Garamond","Noto Serif JP",serif;
+    --radius:5px;
   }
-  *, *::before, *::after { box-sizing:border-box; }
-  html { scroll-behavior:smooth; }
-  body { margin:0; background:var(--color-bg); color:var(--color-text);
-    font-family:var(--font-body); font-weight:400; font-size:15px; line-height:1.55; }
-  h1, h2, h3, h4 { font-family:var(--font-heading); font-weight:500; margin:0; line-height:1.2; }
-  p, span, a, li, button, input, textarea, figcaption { font-family:"Noto Serif JP", serif; }
-  a { color:var(--color-accent-700); text-underline-offset:3px; }
-  a:hover { color:var(--color-accent-600); }
-  img { display:block; max-width:100%; }
-  figure { margin:0; }
-  figcaption { font-size:11px; margin-top:var(--space-1); color:color-mix(in srgb, var(--color-text) 55%, transparent); }
-  :focus { outline:none; }
-  :focus-visible { outline:2px solid var(--color-accent); outline-offset:2px; }
-  ::selection { background:color-mix(in srgb, var(--color-accent) 30%, transparent); }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);font-weight:400;
+    font-size:16px;line-height:1.9;-webkit-font-smoothing:antialiased;}
+  img{display:block;max-width:100%;}
+  a{color:var(--accent-700);text-underline-offset:3px;}
+  figure{margin:0;}
+  h1,h2,h3{margin:0;font-family:var(--display);font-weight:500;line-height:1.35;}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+  ::selection{background:color-mix(in srgb,var(--accent) 30%,transparent);}
 
-  .plate { filter:sepia(.22) saturate(.82) contrast(1.05); box-sizing:border-box;
-    border:6px solid var(--color-surface); outline:1px solid var(--color-divider); }
+  .wrap{width:100%;max-width:1040px;margin:0 auto;padding:0 20px;}
+  .section{padding:54px 0;}
+  .section-tight{padding:44px 0;}
 
-  .btn { display:inline-flex; align-items:center; justify-content:center; gap:6px;
-    cursor:pointer; text-decoration:none; font-family:var(--font-heading); font-weight:500;
-    font-size:13px; line-height:1.2; color:var(--color-text); background:transparent;
-    border:1px solid transparent; padding:calc(var(--space-2) * .85) var(--space-3); border-radius:var(--radius-md); }
-  .btn-primary { color:var(--color-accent); border-color:var(--color-accent); }
-  .btn-primary:hover { background:color-mix(in srgb, var(--color-accent) 12%, transparent); }
-  .btn-primary:active { background:color-mix(in srgb, var(--color-accent) 22%, transparent); }
-  .btn-secondary { border-color:var(--color-divider); }
-  .btn-secondary:hover { background:color-mix(in srgb, var(--color-text) 7%, transparent); }
+  .kicker{font-family:var(--display);font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--accent-700);margin:14px 0 0;}
+  .rule{width:48px;height:1px;background:var(--accent);}
+  .title{font-size:25px;letter-spacing:.01em;margin:10px 0 0;line-height:1.45;}
+  .lead{font-size:15.5px;line-height:2;margin:16px 0 0;color:var(--n800);}
+  .en-note{font-family:var(--display);font-style:italic;color:var(--n600);}
 
-  .card { display:flex; flex-direction:column; gap:var(--space-2); padding:var(--space-3);
-    border-radius:var(--radius-md); background:transparent; border:1px solid var(--color-divider); }
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;text-decoration:none;
+    font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:.06em;line-height:1.2;
+    padding:13px 22px;border-radius:var(--radius);border:1px solid transparent;color:var(--ink);
+    background:transparent;cursor:pointer;}
+  .btn-primary{color:var(--accent);border-color:var(--accent);}
+  .btn-primary:hover{background:color-mix(in srgb,var(--accent) 12%,transparent);}
+  .btn-line{border-color:var(--divider);}
+  .btn-line:hover{background:color-mix(in srgb,var(--ink) 7%,transparent);}
+  .btn-lg{width:100%;padding:16px 22px;font-size:15px;}
+  @media(min-width:600px){.btn-lg{width:auto;}}
+  .btn-fill{background:var(--accent);color:#fff;border-color:var(--accent);}
+  .btn-fill:hover{background:var(--accent-700);}
 
-  /* — hamburger menu (JS不要・CSSのみ) — */
-  .menu-cb { position:absolute; opacity:0; width:0; height:0; pointer-events:none; }
-  .menu-panel { display:none; }
-  .menu-cb:checked ~ .menu-panel { display:block; }
-  .hamburger { display:inline-flex; align-items:center; justify-content:center;
-    width:42px; height:42px; padding:0; cursor:pointer; background:transparent;
-    border:1px solid var(--color-divider); border-radius:var(--radius-md); }
-  .hamburger:hover { background:color-mix(in srgb, var(--color-text) 7%, transparent); }
-  .hamburger .bars { display:grid; gap:5px; }
-  .hamburger .bars span { display:block; width:18px; height:1px; background:var(--color-text); }
+  /* header */
+  header.site{position:sticky;top:0;z-index:60;background:color-mix(in srgb,var(--bg) 94%,transparent);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--divider);}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:11px 20px;max-width:1040px;margin:0 auto;}
+  .bar .logo img{height:30px;width:auto;display:block;}
+  .bar .actions{display:flex;align-items:center;gap:9px;}
+  .menu-cb{position:absolute;opacity:0;width:0;height:0;pointer-events:none;}
+  .hamburger{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;
+    border:1px solid var(--divider);border-radius:var(--radius);background:transparent;cursor:pointer;}
+  .hamburger span{display:grid;gap:5px;}
+  .hamburger span span{display:block;width:19px;height:1px;background:var(--ink);}
+  .menu-panel{display:none;border-top:1px solid var(--divider);background:var(--n100);}
+  .menu-cb:checked ~ .menu-panel{display:block;}
+  .menu-panel .inner{max-width:1040px;margin:0 auto;padding:6px 20px 22px;}
+  .menu-panel a{display:flex;align-items:baseline;gap:14px;padding:15px 2px;border-bottom:1px solid var(--divider);
+    text-decoration:none;color:var(--ink);}
+  .menu-panel a .no{font-family:var(--display);font-size:12px;letter-spacing:.12em;color:var(--accent-700);min-width:24px;}
+  .menu-panel a .lb{font-size:16px;}
+  .menu-panel a .en{margin-left:auto;font-family:var(--display);font-size:12px;letter-spacing:.14em;color:var(--n600);}
+  @media(min-width:768px){.hamburger,.menu-panel{display:none!important;}
+    .navlinks{display:flex;gap:24px;align-items:center;}
+    .navlinks a{font-family:var(--display);font-weight:500;font-size:14px;letter-spacing:.04em;color:var(--ink);text-decoration:none;}
+    .navlinks a:hover{color:var(--accent);}}
+  .navlinks{display:none;}
 
-  /* — 予約タブ (JS不要・CSSのみ) — */
-  .resv-tabinput { position:absolute; opacity:0; width:0; height:0; pointer-events:none; }
-  .resv-tab { display:inline-flex; align-items:center; padding:14px 20px; margin-bottom:-1px;
-    background:transparent; border:0; border-bottom:2px solid transparent;
-    font-family:var(--font-heading); font-weight:500; font-size:15px; letter-spacing:.08em;
-    cursor:pointer; color:var(--color-neutral-600); }
-  #resv-general:checked ~ .resv-tabs label[for="resv-general"],
-  #resv-corp:checked ~ .resv-tabs label[for="resv-corp"] {
-    border-bottom-color:var(--color-accent); color:var(--color-accent-700); }
-  .resv-panel { display:none; }
-  #resv-general:checked ~ .resv-body .resv-panel-general { display:block; }
-  #resv-corp:checked ~ .resv-body .resv-panel-corp { display:block; }
+  /* hero */
+  .hero{position:relative;min-height:74vh;display:flex;align-items:flex-end;overflow:hidden;background:var(--n900);}
+  .hero .bgimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+    filter:sepia(.3) saturate(.6) contrast(1.02) brightness(.52);}
+  .hero .veil{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(24,23,21,.5) 0%,rgba(24,23,21,.5) 35%,rgba(24,23,21,.86) 100%);}
+  .hero .inner{position:relative;max-width:1040px;margin:0 auto;width:100%;padding:0 20px 46px;}
+  .hero .place{font-family:var(--display);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent-300);margin:0 0 14px;}
+  .hero h1{font-size:34px;line-height:1.45;color:var(--n100);letter-spacing:.01em;}
+  .hero p{margin:18px 0 0;max-width:26em;font-size:15.5px;line-height:2;color:color-mix(in srgb,var(--n100) 94%,transparent);}
+  .hero .cta{margin-top:26px;display:flex;flex-direction:column;gap:11px;}
+  @media(min-width:600px){.hero .cta{flex-direction:row;}}
+  .hero .btn-primary{color:var(--accent-300);border-color:var(--accent-300);}
+  .hero .btn-line{color:var(--n100);border-color:color-mix(in srgb,var(--n100) 42%,transparent);}
+
+  /* generic 2-col that stacks on mobile */
+  .cols{display:grid;gap:28px;}
+  @media(min-width:768px){.cols{grid-template-columns:1fr 1fr;gap:56px;align-items:start;}}
+
+  .plate{width:100%;object-fit:cover;border:5px solid var(--surface);outline:1px solid var(--divider);
+    filter:sepia(.2) saturate(.85) contrast(1.04);}
+  .cap{font-size:12px;color:var(--n600);margin-top:8px;}
+
+  /* name words */
+  .words{margin-top:22px;display:grid;gap:14px;}
+  .word{display:flex;gap:16px;align-items:baseline;padding-bottom:14px;border-bottom:1px solid var(--divider);}
+  .word b{font-family:var(--display);font-style:italic;font-weight:400;font-size:30px;color:var(--accent-700);min-width:3.2em;}
+  .word span{font-size:15.5px;line-height:1.9;}
+
+  /* values (dark) */
+  .values{background:var(--n900);color:var(--n100);}
+  .values .grid{display:grid;gap:26px;}
+  @media(min-width:768px){.values .grid{grid-template-columns:repeat(3,1fr);gap:44px;}}
+  .value .n{font-family:var(--display);font-size:32px;color:var(--accent-400);line-height:1;}
+  .value h3{margin:10px 0 6px;font-weight:500;font-size:20px;color:var(--n100);}
+  .value p{margin:0;font-size:14.5px;line-height:1.95;color:color-mix(in srgb,var(--n100) 88%,transparent);}
+
+  /* menu */
+  .mgroup{margin-top:32px;}
+  .mgroup .head{display:flex;align-items:baseline;gap:12px;padding-bottom:11px;border-bottom:1px solid var(--ink);}
+  .mgroup .head h3{font-weight:600;font-size:19px;letter-spacing:.02em;}
+  .mgroup .note{margin:11px 0 0;font-size:14px;line-height:1.9;color:var(--n800);}
+  .mrow{display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:baseline;padding:13px 2px;border-bottom:1px solid var(--divider);}
+  .mrow .nm{font-size:15.5px;}
+  .mrow .pr{font-family:var(--display);font-size:18px;letter-spacing:.03em;font-variant-numeric:lining-nums tabular-nums;white-space:nowrap;text-align:right;}
+  .mrow .mn{grid-column:1 / -1;font-family:var(--display);font-size:12px;letter-spacing:.1em;color:var(--n600);font-variant-numeric:lining-nums tabular-nums;}
+  .optcard{margin-top:30px;border:1px solid var(--divider);border-radius:var(--radius);padding:20px;}
+  .optcard .lbl{font-family:var(--display);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-700);}
+  .optrow{display:flex;justify-content:space-between;gap:14px;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--divider);}
+  .optrow span:first-child{font-size:15px;}
+  .optrow span:last-child{font-family:var(--display);font-size:16px;font-variant-numeric:lining-nums tabular-nums;white-space:nowrap;}
+
+  /* reservation */
+  .resv{background:var(--n100);border-top:1px solid var(--divider);border-bottom:1px solid var(--divider);}
+  .resvbox{margin-top:22px;border:1px solid var(--divider);border-radius:var(--radius);background:var(--bg);padding:22px;}
+  .resvbox h3{font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:.03em;}
+  .resvbox p{margin:9px 0 0;font-size:15px;line-height:1.95;color:var(--n800);}
+  .resvbox .go{margin-top:16px;}
+  .embed{display:none;margin-top:18px;}
+  @media(min-width:820px){.embed{display:block;}
+    .embed iframe{width:100%;height:720px;border:0;background:var(--bg);display:block;}
+    .embed .fold-note{font-size:13px;color:var(--n700);margin-top:8px;}}
+  .resvbox.corp{margin-top:14px;}
+  .notes{margin-top:22px;display:grid;gap:16px;}
+  @media(min-width:600px){.notes{grid-template-columns:repeat(3,1fr);}}
+  .note-i{border-top:1px solid var(--ink);padding-top:11px;}
+  .note-i .l{font-size:12px;letter-spacing:.14em;color:var(--accent-700);margin:0 0 3px;}
+  .note-i .t{margin:0;font-size:14.5px;line-height:1.9;}
+
+  /* access */
+  .arow{border-top:1px solid var(--divider);padding-top:11px;margin-top:16px;}
+  .arow:first-child{margin-top:0;}
+  .arow .l{font-size:12px;letter-spacing:.16em;color:var(--n600);margin:0 0 4px;}
+  .arow .t{margin:0;font-size:15.5px;line-height:1.85;white-space:pre-line;font-variant-numeric:lining-nums tabular-nums;}
+  .mapframe{border:5px solid var(--surface);outline:1px solid var(--divider);aspect-ratio:4/3;margin-top:8px;}
+  .mapframe iframe{width:100%;height:100%;border:0;display:block;filter:sepia(.14) saturate(.9);}
+
+  /* shop */
+  .shop{background:var(--n100);border-top:1px solid var(--divider);}
+  .shop h2{font-size:23px;}
+  .shop .btns{margin-top:20px;display:flex;flex-direction:column;gap:11px;}
+  @media(min-width:600px){.shop .btns{flex-direction:row;}}
+
+  /* footer */
+  footer.site{background:var(--n900);color:var(--n200);padding:44px 0;}
+  footer.site .cols2{display:grid;gap:26px;}
+  @media(min-width:768px){footer.site .cols2{grid-template-columns:1.2fr 1fr 1fr;gap:36px;}}
+  footer.site .logo{display:inline-flex;padding:12px 16px;background:var(--n100);border-radius:3px;}
+  footer.site .logo img{height:28px;}
+  footer.site .tag{margin:14px 0 0;font-family:var(--display);font-style:italic;font-size:14px;color:var(--accent-300);}
+  footer.site .info span{display:block;font-size:14px;line-height:1.95;color:color-mix(in srgb,var(--n100) 86%,transparent);}
+  footer.site .fnav a{display:block;color:var(--n200);text-decoration:none;font-size:14px;padding:4px 0;}
+  footer.site .copy{margin-top:26px;padding-top:16px;border-top:1px solid color-mix(in srgb,var(--n100) 18%,transparent);
+    font-size:12px;letter-spacing:.08em;color:color-mix(in srgb,var(--n100) 48%,transparent);}
 </style>
 </head>
 <body>
-<div style="width:100%; overflow-x:hidden; background:var(--color-bg);">
 
-  <header style="position:sticky; top:0; z-index:60; background:color-mix(in srgb, var(--color-bg) 92%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--color-divider);">
-    <input type="checkbox" id="menuToggle" class="menu-cb">
-    <div style="max-width:1060px; margin:0 auto; padding:var(--space-3) clamp(18px,4vw,36px); display:flex; align-items:center; justify-content:space-between; gap:var(--space-4);">
-      <a href="index.html" style="display:flex; align-items:center; line-height:0;">
-        <img src="logo.png" alt="LOKOMAIKAI" style="height:clamp(28px,6.5vw,34px); width:auto;">
-      </a>
-      <div style="display:flex; align-items:center; gap:var(--space-2);">
-        <a class="btn btn-primary" href="#reserve" style="letter-spacing:.06em;">ご予約</a>
-        <label for="menuToggle" class="hamburger" aria-label="メニュー" role="button" tabindex="0">
-          <span class="bars"><span></span><span></span><span></span></span>
-        </label>
-      </div>
-    </div>
-    <nav class="menu-panel" style="border-top:1px solid var(--color-divider); background:var(--color-neutral-100);">
-      <div style="max-width:1060px; margin:0 auto; padding:var(--space-2) clamp(18px,4vw,36px) var(--space-6); display:grid;">
-        <a href="#about" style="display:flex; align-items:baseline; gap:var(--space-3); padding:var(--space-4) 2px; border-bottom:1px solid var(--color-divider); text-decoration:none; color:var(--color-text);">
-          <span style="font-family:'Cormorant Garamond',serif; font-size:12px; letter-spacing:.14em; color:var(--color-accent-700); font-variant-numeric:lining-nums tabular-nums; min-width:26px;">01</span>
-          <span style="font-size:16px; letter-spacing:.02em;">LOKOMAIKAI について</span>
-          <span style="margin-left:auto; font-family:'Cormorant Garamond',serif; font-size:12px; letter-spacing:.16em; color:var(--color-neutral-600);">About</span>
-        </a>
-        <a href="#menu" style="display:flex; align-items:baseline; gap:var(--space-3); padding:var(--space-4) 2px; border-bottom:1px solid var(--color-divider); text-decoration:none; color:var(--color-text);">
-          <span style="font-family:'Cormorant Garamond',serif; font-size:12px; letter-spacing:.14em; color:var(--color-accent-700); font-variant-numeric:lining-nums tabular-nums; min-width:26px;">02</span>
-          <span style="font-size:16px; letter-spacing:.02em;">メニューとお値段</span>
-          <span style="margin-left:auto; font-family:'Cormorant Garamond',serif; font-size:12px; letter-spacing:.16em; color:var(--color-neutral-600);">Menu</span>
-        </a>
-        <a href="#reserve" style="display:flex; align-items:baseline; gap:var(--space-3); padding:var(--space-4) 2px; border-bottom:1px solid var(--color-divider); text-decoration:none; color:var(--color-text);">
-          <span style="font-family:'Cormorant Garamond',serif; font-size:12px; letter-spacing:.14em; color:var(--color-accent-700); font-variant-numeric:lining-nums tabular-nums; min-width:26px;">03</span>
-          <span style="font-size:16px; letter-spacing:.02em;">ご予約</span>
-          <span style="margin-left:auto; font-family:'Cormorant Garamond',serif; font-size:12px; letter-spacing:.16em; color:var(--color-neutral-600);">Reservation</span>
-        </a>
-        <a href="#access" style="display:flex; align-items:baseline; gap:var(--space-3); padding:var(--space-4) 2px; border-bottom:1px solid var(--color-divider); text-decoration:none; color:var(--color-text);">
-          <span style="font-family:'Cormorant Garamond',serif; font-size:12px; letter-spacing:.14em; color:var(--color-accent-700); font-variant-numeric:lining-nums tabular-nums; min-width:26px;">04</span>
-          <span style="font-size:16px; letter-spacing:.02em;">場所・アクセス</span>
-          <span style="margin-left:auto; font-family:'Cormorant Garamond',serif; font-size:12px; letter-spacing:.16em; color:var(--color-neutral-600);">Access</span>
-        </a>
-        <a href="corporate.html" style="display:flex; align-items:baseline; gap:var(--space-3); padding:var(--space-4) 2px; border-bottom:1px solid var(--color-divider); text-decoration:none; color:var(--color-text);">
-          <span style="font-family:'Cormorant Garamond',serif; font-size:12px; letter-spacing:.14em; color:var(--color-accent-700); font-variant-numeric:lining-nums tabular-nums; min-width:26px;">05</span>
-          <span style="font-size:16px; letter-spacing:.02em;">福利厚生のご案内</span>
-          <span style="margin-left:auto; font-family:'Cormorant Garamond',serif; font-size:12px; letter-spacing:.16em; color:var(--color-neutral-600);">For Companies</span>
-        </a>
-      </div>
+<header class="site">
+  <input type="checkbox" id="mtoggle" class="menu-cb">
+  <div class="bar">
+    <a class="logo" href="index.html"><img src="logo.png" alt="LOKOMAIKAI"></a>
+    <nav class="navlinks">
+      <a href="#about">LOKOMAIKAIについて</a>
+      <a href="#menu">メニュー</a>
+      <a href="#reserve">ご予約</a>
+      <a href="#access">アクセス</a>
+      <a href="corporate.html">福利厚生</a>
     </nav>
-  </header>
-
-  <section style="position:relative; min-height:clamp(520px,86vh,780px); display:grid; align-items:end; overflow:hidden; background:var(--color-neutral-900);">
-    <div style="position:absolute; inset:0; overflow:hidden;">
-      <img src="exterior.png" alt="LOKOMAIKAI 外観" style="width:100%; height:100%; object-fit:cover; filter:sepia(.3) saturate(.6) contrast(1.02) brightness(.5);">
-      <div style="position:absolute; inset:0; background:linear-gradient(to bottom, rgba(24,23,21,.55) 0%, rgba(24,23,21,.52) 30%, rgba(24,23,21,.86) 100%);"></div>
+    <div class="actions">
+      <a class="btn btn-primary" href="#reserve">ご予約</a>
+      <label for="mtoggle" class="hamburger" aria-label="メニュー"><span><span></span><span></span><span></span></span></label>
     </div>
-    <div style="position:relative; max-width:1060px; width:100%; margin:0 auto; padding:0 clamp(18px,4vw,36px) clamp(44px,9vw,80px);">
-      <p style="margin:0 0 var(--space-4); font-family:'Cormorant Garamond',serif; font-size:12px; letter-spacing:.34em; color:var(--color-accent-300); text-transform:uppercase;">Lokomaikaʻi — Yomitan, Okinawa</p>
-      <h1 style="margin:0; font-weight:500; font-size:clamp(32px,8.4vw,68px); line-height:1.42; letter-spacing:.01em; color:var(--color-neutral-100); text-wrap:balance;">思いやりの手が、<br>からだをほどく。</h1>
-      <p style="margin:var(--space-6) 0 0; max-width:30em; font-size:clamp(15px,3.6vw,17px); line-height:2.05; letter-spacing:.02em; color:color-mix(in srgb, var(--color-neutral-100) 94%, transparent);">ハワイアン雑貨のならぶ店の奥、静かな一室で。ロミロミの手わざと、ハワイの言葉に宿る心で、あなたの一日をゆるめます。</p>
-      <div style="margin-top:var(--space-8); display:flex; flex-wrap:wrap; gap:var(--space-3);">
-        <a class="btn btn-primary" href="#reserve" style="padding:var(--space-3) var(--space-6); font-size:14px; letter-spacing:.1em; color:var(--color-accent-300); border-color:var(--color-accent-300);">ご予約はこちら</a>
-        <a class="btn" href="#menu" style="padding:var(--space-3) var(--space-6); font-size:14px; letter-spacing:.1em; color:var(--color-neutral-200); border-color:color-mix(in srgb, var(--color-neutral-100) 40%, transparent);">メニューを見る</a>
-      </div>
+  </div>
+  <nav class="menu-panel">
+    <div class="inner">
+      <a href="#about"><span class="no">01</span><span class="lb">LOKOMAIKAI について</span><span class="en">About</span></a>
+      <a href="#menu"><span class="no">02</span><span class="lb">メニューとお値段</span><span class="en">Menu</span></a>
+      <a href="#reserve"><span class="no">03</span><span class="lb">ご予約</span><span class="en">Reservation</span></a>
+      <a href="#access"><span class="no">04</span><span class="lb">場所・アクセス</span><span class="en">Access</span></a>
+      <a href="corporate.html"><span class="no">05</span><span class="lb">福利厚生のご案内</span><span class="en">For Companies</span></a>
     </div>
-  </section>
+  </nav>
+</header>
 
-  <section id="about" style="padding:clamp(64px,12vw,132px) clamp(18px,4vw,36px);">
-    <div style="max-width:1060px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(32px,6vw,72px); align-items:start;">
+<section class="hero">
+  <img class="bgimg" src="exterior.png" alt="LOKOMAIKAI 外観">
+  <div class="veil"></div>
+  <div class="inner">
+    <p class="place">Lokomaikaʻi — Yomitan, Okinawa</p>
+    <h1>思いやりの手が、<br>からだをほどく。</h1>
+    <p>ハワイアン雑貨のならぶ店の奥、静かな一室で。ロミロミの手わざと、ハワイの言葉に宿る心で、あなたの一日をゆるめます。</p>
+    <div class="cta">
+      <a class="btn btn-primary btn-lg" href="#reserve">ご予約はこちら</a>
+      <a class="btn btn-line btn-lg" href="#menu">メニューを見る</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="cols">
       <div>
-        <div style="width:56px; height:1px; background:var(--color-accent);"></div>
-        <p style="margin:var(--space-4) 0 0; font-family:'Cormorant Garamond',serif; font-size:12px; letter-spacing:.28em; color:var(--color-accent-700); text-transform:uppercase;">The Name</p>
-        <h2 style="margin:var(--space-3) 0 0; font-weight:500; font-size:clamp(26px,6vw,40px); line-height:1.5; letter-spacing:.01em;">LOKOMAIKAI、<br>という言葉について</h2>
-        <div style="margin-top:var(--space-6); display:grid; gap:var(--space-4);">
-          <div style="display:flex; gap:var(--space-4); align-items:baseline; padding-bottom:var(--space-4); border-bottom:1px solid var(--color-divider);">
-            <span style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(26px,6vw,38px); font-weight:300; color:var(--color-accent-700); min-width:3.4em;">loko</span>
-            <span style="font-size:16px; line-height:1.95; letter-spacing:.02em;">寛大な、心の広い</span>
-          </div>
-          <div style="display:flex; gap:var(--space-4); align-items:baseline; padding-bottom:var(--space-4); border-bottom:1px solid var(--color-divider);">
-            <span style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:clamp(26px,6vw,38px); font-weight:300; color:var(--color-accent-700); min-width:3.4em;">maikaʻi</span>
-            <span style="font-size:16px; line-height:1.95; letter-spacing:.02em;">素晴らしい、善い</span>
-          </div>
+        <div class="rule"></div>
+        <p class="kicker">The Name</p>
+        <h2 class="title">LOKOMAIKAI、という言葉について</h2>
+        <div class="words">
+          <div class="word"><b>loko</b><span>寛大な、心の広い</span></div>
+          <div class="word"><b>maikaʻi</b><span>素晴らしい、善い</span></div>
         </div>
-        <p style="margin:var(--space-6) 0 0; font-size:16px; line-height:2.05; letter-spacing:.02em; text-wrap:pretty;">ふたつ合わせて「LOKOMAIKAI」。人に優しく、思いやりを持って接する心をあらわす言葉です。ハワイでは、その人の人柄や生き方をたたえるときに使われます。</p>
-        <p style="margin:0; font-size:16px; line-height:2.05; letter-spacing:.02em; text-wrap:pretty;">この言葉を、そのまま施術の姿勢にしました。強さや速さではなく、その日のからだに合わせて手を添えること。終わったあとに、人へやさしくなれること。それが当店のエステです。</p>
+        <p class="lead">ふたつ合わせて「LOKOMAIKAI」。人に優しく、思いやりを持って接する心をあらわす言葉です。ハワイでは、その人の人柄や生き方をたたえるときに使われます。</p>
+        <p class="lead">この言葉を、そのまま施術の姿勢にしました。強さや速さではなく、その日のからだに合わせて手を添えること。それが当店のエステです。</p>
       </div>
-      <figure style="margin:0; display:grid; gap:var(--space-3);">
-        <img class="plate" src="interior.png" alt="施術を行う店内の一室" style="width:100%; aspect-ratio:4/3; object-fit:cover;">
-        <figcaption style="letter-spacing:.06em;">読谷村ときわ・店内の一室にて</figcaption>
+      <figure>
+        <img class="plate" src="interior.png" alt="施術を行う店内の一室" style="aspect-ratio:4/3;">
+        <figcaption class="cap">読谷村ときわ・店内の一室にて</figcaption>
       </figure>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section style="background:var(--color-neutral-900); color:var(--color-neutral-100); padding:clamp(56px,11vw,112px) clamp(18px,4vw,36px);">
-    <div style="max-width:1060px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:clamp(28px,5vw,56px);">
-      <div style="display:grid; gap:var(--space-3); align-content:start;">
-        <span style="font-family:'Cormorant Garamond',serif; font-size:34px; font-weight:300; color:var(--color-accent-400); font-variant-numeric:lining-nums tabular-nums; line-height:1;">01</span>
-        <h3 style="margin:0; font-weight:500; font-size:21px; letter-spacing:.02em; color:var(--color-neutral-100);">その日のからだに合わせて</h3>
-        <p style="margin:0; font-size:14px; line-height:2.05; letter-spacing:.04em; color:color-mix(in srgb, var(--color-neutral-100) 88%, transparent);">強さも時間の配分も、お話をうかがってから決めます。決まった型に当てはめることはしません。</p>
+<section class="section values">
+  <div class="wrap">
+    <div class="grid">
+      <div class="value"><div class="n">01</div><h3>その日のからだに合わせて</h3><p>強さも時間の配分も、お話をうかがってから決めます。決まった型に当てはめることはしません。</p></div>
+      <div class="value"><div class="n">02</div><h3>ハワイの手わざで</h3><p>前腕を使ってゆっくり流すロミロミの動きを基本に、こわばりのある場所をていねいにほどきます。</p></div>
+      <div class="value"><div class="n">03</div><h3>静かな一室で</h3><p>雑貨店の奥、一室のみのご案内です。他のお客様と一緒になることはありません。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="menu">
+  <div class="wrap" style="max-width:820px;">
+    <div class="rule"></div>
+    <p class="kicker">Menu</p>
+    <h2 class="title">メニューとお値段</h2>
+    <p class="lead" style="font-size:14px;">※ 以下は仮のメニューです。内容・お値段は決まりしだい差し替えます。表示は税込。</p>
+
+    <div class="mgroup">
+      <div class="head"><h3>ロミロミ</h3><span class="en-note">Lomilomi</span></div>
+      <p class="note">ハワイに伝わる手わざ。前腕でゆっくりと流していきます。オイルはお肌に合わせてお選びいただけます。</p>
+      <div class="mrow"><span class="nm">背中・肩まわり</span><span class="pr">¥6,600</span><span class="mn">40 min</span></div>
+      <div class="mrow"><span class="nm">上半身（背中・肩・腕・首）</span><span class="pr">¥8,800</span><span class="mn">60 min</span></div>
+      <div class="mrow"><span class="nm">全身</span><span class="pr">¥12,800</span><span class="mn">90 min</span></div>
+      <div class="mrow"><span class="nm">全身 じっくり</span><span class="pr">¥16,500</span><span class="mn">120 min</span></div>
+    </div>
+
+    <div class="mgroup">
+      <div class="head"><h3>フェイシャル</h3><span class="en-note">Facial</span></div>
+      <p class="note">沖縄の日差しで疲れたお肌に。クレンジングから保湿まで、ひととおり。</p>
+      <div class="mrow"><span class="nm">ベーシック</span><span class="pr">¥8,800</span><span class="mn">50 min</span></div>
+      <div class="mrow"><span class="nm">デコルテまで</span><span class="pr">¥11,000</span><span class="mn">70 min</span></div>
+    </div>
+
+    <div class="mgroup">
+      <div class="head"><h3>組み合わせ</h3><span class="en-note">Combination</span></div>
+      <p class="note">はじめての方には、上半身＋ヘッドスパをおすすめしています。</p>
+      <div class="mrow"><span class="nm">全身＋フェイシャル</span><span class="pr">¥21,000</span><span class="mn">150 min</span></div>
+      <div class="mrow"><span class="nm">上半身＋ヘッドスパ</span><span class="pr">¥13,200</span><span class="mn">90 min</span></div>
+    </div>
+
+    <div class="optcard">
+      <div class="lbl">Option</div>
+      <div class="optrow"><span>ヘッドスパ（30分）</span><span>¥3,300</span></div>
+      <div class="optrow"><span>フットケア（20分）</span><span>¥2,200</span></div>
+      <div class="optrow"><span>ホットストーン追加</span><span>¥1,650</span></div>
+      <p class="note" style="margin-top:12px;">お着替えとタオルはご用意しています。妊娠中の方、通院中の方はご予約時にお知らせください。</p>
+    </div>
+  </div>
+</section>
+
+<section class="section resv" id="reserve">
+  <div class="wrap" style="max-width:820px;">
+    <div class="rule"></div>
+    <p class="kicker">Reservation</p>
+    <h2 class="title">ご予約</h2>
+    <p class="lead">ご希望の日時から、そのままご予約いただけます。ボタンから予約ページを開いて、空いている時間をお選びください。</p>
+
+    <div class="resvbox">
+      <h3>一般のお客様</h3>
+      <p>予約ページ（Googleカレンダー）が開きます。カレンダーで日にちを選ぶと、その日の空いている時間が出ます。</p>
+      <div class="go">
+        <a class="btn btn-fill btn-lg" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0rQqFVmKJxVihLuj3-FxrxySU6NwZSqMWwylu4l7gBf78Z1GbUWYKFztRsBzi-ziZtDzQd7PhN?gv=true" target="_blank" rel="noopener">空いている時間を見て予約する</a>
       </div>
-      <div style="display:grid; gap:var(--space-3); align-content:start;">
-        <span style="font-family:'Cormorant Garamond',serif; font-size:34px; font-weight:300; color:var(--color-accent-400); font-variant-numeric:lining-nums tabular-nums; line-height:1;">02</span>
-        <h3 style="margin:0; font-weight:500; font-size:21px; letter-spacing:.02em; color:var(--color-neutral-100);">ハワイの手わざで</h3>
-        <p style="margin:0; font-size:14px; line-height:2.05; letter-spacing:.04em; color:color-mix(in srgb, var(--color-neutral-100) 88%, transparent);">前腕を使ってゆっくり流すロミロミの動きを基本に、こわばりのある場所をていねいにほどきます。</p>
-      </div>
-      <div style="display:grid; gap:var(--space-3); align-content:start;">
-        <span style="font-family:'Cormorant Garamond',serif; font-size:34px; font-weight:300; color:var(--color-accent-400); font-variant-numeric:lining-nums tabular-nums; line-height:1;">03</span>
-        <h3 style="margin:0; font-weight:500; font-size:21px; letter-spacing:.02em; color:var(--color-neutral-100);">静かな一室で</h3>
-        <p style="margin:0; font-size:14px; line-height:2.05; letter-spacing:.04em; color:color-mix(in srgb, var(--color-neutral-100) 88%, transparent);">雑貨店の奥、一室のみのご案内です。他のお客様と一緒になることはありません。</p>
+      <div class="embed">
+        <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0rQqFVmKJxVihLuj3-FxrxySU6NwZSqMWwylu4l7gBf78Z1GbUWYKFztRsBzi-ziZtDzQd7PhN?gv=true" title="ご予約カレンダー" loading="lazy"></iframe>
+        <p class="fold-note">※ 枠が表示されない場合は、上のボタンから別画面でご予約ください。</p>
       </div>
     </div>
-  </section>
 
-  <section id="menu" style="padding:clamp(64px,12vw,132px) clamp(18px,4vw,36px);">
-    <div style="max-width:860px; margin:0 auto;">
-      <div style="width:56px; height:1px; background:var(--color-accent);"></div>
-      <p style="margin:var(--space-4) 0 0; font-family:'Cormorant Garamond',serif; font-size:12px; letter-spacing:.28em; color:var(--color-accent-700); text-transform:uppercase;">Menu</p>
-      <h2 style="margin:var(--space-3) 0 0; font-weight:500; font-size:clamp(26px,6vw,40px); letter-spacing:.01em;">メニューとお値段</h2>
-      <p style="margin:var(--space-4) 0 0; font-size:14px; line-height:1.95; letter-spacing:.02em; color:var(--color-neutral-800);">※ 以下は仮のメニューです。内容・お値段は決まりしだい差し替えます。表示は税込。</p>
-
-      <div style="margin-top:clamp(32px,6vw,56px); display:grid; gap:clamp(36px,6vw,64px);">
-
-        <div>
-          <div style="display:flex; align-items:baseline; gap:var(--space-3); padding-bottom:var(--space-3); border-bottom:1px solid var(--color-text);">
-            <h3 style="margin:0; font-weight:600; font-size:20px; letter-spacing:.03em;">ロミロミ</h3>
-            <span style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:14px; letter-spacing:.1em; color:var(--color-neutral-600);">Lomilomi</span>
-          </div>
-          <p style="margin:var(--space-3) 0 0; font-size:15px; line-height:1.95; letter-spacing:.02em; color:var(--color-neutral-800); max-width:44em;">ハワイに伝わる手わざ。前腕でゆっくりと流していきます。オイルはお肌に合わせてお選びいただけます。</p>
-          <div style="margin-top:var(--space-2);">
-            <div style="display:flex; align-items:baseline; gap:var(--space-3); padding:var(--space-4) 2px; border-bottom:1px solid var(--color-divider);">
-              <span style="font-size:16px; letter-spacing:.02em;">背中・肩まわり</span>
-              <span style="flex:1; height:1px; background:var(--color-divider); transform:translateY(-3px);"></span>
-              <span style="font-family:'Cormorant Garamond',serif; font-size:13px; letter-spacing:.12em; color:var(--color-neutral-600); font-variant-numeric:lining-nums tabular-nums; white-space:nowrap;">40 min</span>
-              <span style="font-family:'Cormorant Garamond',serif; font-size:19px; letter-spacing:.04em; font-variant-numeric:lining-nums tabular-nums; white-space:nowrap; min-width:5.2em; text-align:right;">¥6,600</span>
-            </div>
-            <div style="display:flex; align-items:baseline; gap:var(--space-3); padding:var(--space-4) 2px; border-bottom:1px solid var(--color-divider);">
-              <span style="font-size:16px; letter-spacing:.02em;">上半身（背中・肩・腕・首）</span>
-              <span style="flex:1; height:1px; background:var(--color-divider); transform:translateY(-3px);"></span>
-              <span style="font-family:'Cormorant Garamond',serif; font-size:13px; letter-spacing:.12em; color:var(--color-neutral-600); font-variant-numeric:lining-nums tabular-nums; white-space:nowrap;">60 min</span>
-              <span style="font-family:'Cormorant Garamond',serif; font-size:19px; letter-spacing:.04em; font-variant-numeric:lining-nums tabular-nums; white-space:nowrap; min-width:5.2em; text-align:right;">¥8,800</span>
-            </div>
-            <div style="display:flex; align-items:baseline; gap:var(--space-3); padding:var(--space-4) 2px; border-bottom:1px solid var(--color-divider);">
-              <span style="font-size:16px; letter-spacing:.02em;">全身</span>
-              <span style="flex:1; height:1px; background:var(--color-divider); transform:translateY(-3px);"></span>
-              <span style="font-family:'Cormorant Garamond',serif; font-size:13px; letter-spacing:.12em; color:var(--color-neutral-600); font-variant-numeric:lining-nums tabular-nums; white-space:nowrap;">90 min</span>
-              <span style="font-family:'Cormorant Garamond',serif; font-size:19px; letter-spacing:.04em; font-variant-numeric:lining-nums tabular-nums; white-space:nowrap; min-width:5.2em; text-align:right;">¥12,800</span>
-            </div>
-            <div style="display:flex; align-items:baseline; gap:var(--space-3); padding:var(--space-4) 2px; border-bottom:1px solid var(--color-divider);">
-              <span style="font-size:16px; letter-spacing:.02em;">全身 じっくり</span>
-              <span style="flex:1; height:1px; background:var(--color-divider); transform:translateY(-3px);"></span>
-              <span style="font-family:'Cormorant Garamond',serif; font-size:13px; letter-spacing:.12em; color:var(--color-neutral-600); font-variant-numeric:lining-nums tabular-nums; white-space:nowrap;">120 min</span>
-              <span style="font-family:'Cormorant Garamond',serif; font-size:19px; letter-spacing:.04em; font-variant-numeric:lining-nums tabular-nums; white-space:nowrap; min-width:5.2em; text-align:right;">¥16,500</span>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div style="display:flex; align-items:baseline; gap:var(--space-3); padding-bottom:var(--space-3); border-bottom:1px solid var(--color-text);">
-            <h3 style="margin:0; font-weight:600; font-size:20px; letter-spacing:.03em;">フェイシャル</h3>
-            <span style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:14px; letter-spacing:.1em; color:var(--color-neutral-600);">Facial</span>
-          </div>
-          <p style="margin:var(--space-3) 0 0; font-size:15px; line-height:1.95; letter-spacing:.02em; color:var(--color-neutral-800); max-width:44em;">沖縄の日差しで疲れたお肌に。クレンジングから保湿まで、ひととおり。</p>
-          <div style="margin-top:var(--space-2);">
-            <div style="display:flex; align-items:baseline; gap:var(--space-3); padding:var(--space-4) 2px; border-bottom:1px solid var(--color-divider);">
-              <span style="font-size:16px; letter-spacing:.02em;">ベーシック</span>
-              <span style="flex:1; height:1px; background:var(--color-divider); transform:translateY(-3px);"></span>
-              <span style="font-family:'Cormorant Garamond',serif; font-size:13px; letter-spacing:.12em; color:var(--color-neutral-600); font-variant-numeric:lining-nums tabular-nums; white-space:nowrap;">50 min</span>
-              <span style="font-family:'Cormorant Garamond',serif; font-size:19px; letter-spacing:.04em; font-variant-numeric:lining-nums tabular-nums; white-space:nowrap; min-width:5.2em; text-align:right;">¥8,800</span>
-            </div>
-            <div style="display:flex; align-items:baseline; gap:var(--space-3); padding:var(--space-4) 2px; border-bottom:1px solid var(--color-divider);">
-              <span style="font-size:16px; letter-spacing:.02em;">デコルテまで</span>
-              <span style="flex:1; height:1px; background:var(--color-divider); transform:translateY(-3px);"></span>
-              <span style="font-family:'Cormorant Garamond',serif; font-size:13px; letter-spacing:.12em; color:var(--color-neutral-600); font-variant-numeric:lining-nums tabular-nums; white-space:nowrap;">70 min</span>
-              <span style="font-family:'Cormorant Garamond',serif; font-size:19px; letter-spacing:.04em; font-variant-numeric:lining-nums tabular-nums; white-space:nowrap; min-width:5.2em; text-align:right;">¥11,000</span>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div style="display:flex; align-items:baseline; gap:var(--space-3); padding-bottom:var(--space-3); border-bottom:1px solid var(--color-text);">
-            <h3 style="margin:0; font-weight:600; font-size:20px; letter-spacing:.03em;">組み合わせ</h3>
-            <span style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:14px; letter-spacing:.1em; color:var(--color-neutral-600);">Combination</span>
-          </div>
-          <p style="margin:var(--space-3) 0 0; font-size:15px; line-height:1.95; letter-spacing:.02em; color:var(--color-neutral-800); max-width:44em;">はじめての方には、上半身＋ヘッドスパをおすすめしています。</p>
-          <div style="margin-top:var(--space-2);">
-            <div style="display:flex; align-items:baseline; gap:var(--space-3); padding:var(--space-4) 2px; border-bottom:1px solid var(--color-divider);">
-              <span style="font-size:16px; letter-spacing:.02em;">全身＋フェイシャル</span>
-              <span style="flex:1; height:1px; background:var(--color-divider); transform:translateY(-3px);"></span>
-              <span style="font-family:'Cormorant Garamond',serif; font-size:13px; letter-spacing:.12em; color:var(--color-neutral-600); font-variant-numeric:lining-nums tabular-nums; white-space:nowrap;">150 min</span>
-              <span style="font-family:'Cormorant Garamond',serif; font-size:19px; letter-spacing:.04em; font-variant-numeric:lining-nums tabular-nums; white-space:nowrap; min-width:5.2em; text-align:right;">¥21,000</span>
-            </div>
-            <div style="display:flex; align-items:baseline; gap:var(--space-3); padding:var(--space-4) 2px; border-bottom:1px solid var(--color-divider);">
-              <span style="font-size:16px; letter-spacing:.02em;">上半身＋ヘッドスパ</span>
-              <span style="flex:1; height:1px; background:var(--color-divider); transform:translateY(-3px);"></span>
-              <span style="font-family:'Cormorant Garamond',serif; font-size:13px; letter-spacing:.12em; color:var(--color-neutral-600); font-variant-numeric:lining-nums tabular-nums; white-space:nowrap;">90 min</span>
-              <span style="font-family:'Cormorant Garamond',serif; font-size:19px; letter-spacing:.04em; font-variant-numeric:lining-nums tabular-nums; white-space:nowrap; min-width:5.2em; text-align:right;">¥13,200</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="card" style="margin-top:clamp(36px,6vw,64px); padding:clamp(20px,4vw,32px); display:grid; gap:var(--space-2);">
-        <span style="font-family:'Cormorant Garamond',serif; font-size:12px; letter-spacing:.24em; color:var(--color-accent-700); text-transform:uppercase;">Option</span>
-        <div style="display:flex; align-items:baseline; justify-content:space-between; gap:var(--space-4); padding:var(--space-2) 0; border-bottom:1px solid var(--color-divider);">
-          <span style="font-size:15px; letter-spacing:.02em;">ヘッドスパ（30分）</span>
-          <span style="font-family:'Cormorant Garamond',serif; font-size:16px; letter-spacing:.04em; font-variant-numeric:lining-nums tabular-nums; white-space:nowrap;">¥3,300</span>
-        </div>
-        <div style="display:flex; align-items:baseline; justify-content:space-between; gap:var(--space-4); padding:var(--space-2) 0; border-bottom:1px solid var(--color-divider);">
-          <span style="font-size:15px; letter-spacing:.02em;">フットケア（20分）</span>
-          <span style="font-family:'Cormorant Garamond',serif; font-size:16px; letter-spacing:.04em; font-variant-numeric:lining-nums tabular-nums; white-space:nowrap;">¥2,200</span>
-        </div>
-        <div style="display:flex; align-items:baseline; justify-content:space-between; gap:var(--space-4); padding:var(--space-2) 0; border-bottom:1px solid var(--color-divider);">
-          <span style="font-size:15px; letter-spacing:.02em;">ホットストーン追加</span>
-          <span style="font-family:'Cormorant Garamond',serif; font-size:16px; letter-spacing:.04em; font-variant-numeric:lining-nums tabular-nums; white-space:nowrap;">¥1,650</span>
-        </div>
-        <p style="margin:var(--space-2) 0 0; font-size:13.5px; line-height:1.95; letter-spacing:.02em; color:var(--color-neutral-800);">お着替えとタオルはご用意しています。妊娠中の方、通院中の方はご予約時にお知らせください。</p>
+    <div class="resvbox corp">
+      <h3>企業様（福利厚生）</h3>
+      <p>福利厚生としてのご利用は、専用ページのお問い合わせから承ります。</p>
+      <div class="go">
+        <a class="btn btn-primary btn-lg" href="corporate.html#contact">福利厚生のお問い合わせへ</a>
       </div>
     </div>
-  </section>
 
-  <section id="reserve" style="background:var(--color-neutral-100); border-top:1px solid var(--color-divider); border-bottom:1px solid var(--color-divider); padding:clamp(64px,12vw,132px) clamp(18px,4vw,36px);">
-    <div style="max-width:900px; margin:0 auto;">
-      <div style="width:56px; height:1px; background:var(--color-accent);"></div>
-      <p style="margin:var(--space-4) 0 0; font-family:'Cormorant Garamond',serif; font-size:12px; letter-spacing:.28em; color:var(--color-accent-700); text-transform:uppercase;">Reservation</p>
-      <h2 style="margin:var(--space-3) 0 0; font-weight:500; font-size:clamp(26px,6vw,40px); letter-spacing:.01em;">ご予約</h2>
-      <p style="margin:var(--space-4) 0 0; font-size:16px; line-height:2; letter-spacing:.02em;">ご予約の入口をお選びください。</p>
+    <div class="notes">
+      <div class="note-i"><p class="l">所要時間</p><p class="t">お着替えとカウンセリングを含め、コース時間＋20分ほど。</p></div>
+      <div class="note-i"><p class="l">お支払い</p><p class="t">現金・各種クレジットカード・電子マネー。</p></div>
+      <div class="note-i"><p class="l">キャンセル</p><p class="t">前日までにご連絡ください。</p></div>
+    </div>
+  </div>
+</section>
 
-      <input type="radio" name="resvtab" id="resv-general" class="resv-tabinput" checked>
-      <input type="radio" name="resvtab" id="resv-corp" class="resv-tabinput">
-
-      <div class="resv-tabs" style="margin-top:var(--space-6); display:flex; flex-wrap:wrap; gap:var(--space-2); border-bottom:1px solid var(--color-divider);">
-        <label class="resv-tab" for="resv-general">一般のお客様</label>
-        <label class="resv-tab" for="resv-corp">企業様（福利厚生）</label>
-      </div>
-
-      <div class="resv-body" style="margin-top:var(--space-6);">
-        <div class="resv-panel resv-panel-general" style="background:var(--color-bg); border:1px solid var(--color-divider); border-radius:var(--radius-md); padding:clamp(16px,3.5vw,28px);">
-          <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0rQqFVmKJxVihLuj3-FxrxySU6NwZSqMWwylu4l7gBf78Z1GbUWYKFztRsBzi-ziZtDzQd7PhN?gv=true" title="一般のお客様 ご予約カレンダー" style="width:100%; height:clamp(620px,95vw,780px); border:0; display:block; background:var(--color-bg);" scrolling="no"></iframe>
-          <div style="margin-top:var(--space-4); padding-top:var(--space-4); border-top:1px solid var(--color-divider); display:grid; gap:var(--space-2); justify-items:start;">
-            <a class="btn btn-secondary" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0rQqFVmKJxVihLuj3-FxrxySU6NwZSqMWwylu4l7gBf78Z1GbUWYKFztRsBzi-ziZtDzQd7PhN?gv=true" target="_blank" rel="noopener" style="padding:var(--space-2) var(--space-4); letter-spacing:.08em;">別の画面で予約する</a>
-            <span style="font-size:13.5px; line-height:1.9; color:var(--color-neutral-800);">※ 上の枠が表示されない場合はこちらから。</span>
-          </div>
-        </div>
-        <div class="resv-panel resv-panel-corp" style="background:var(--color-bg); border:1px solid var(--color-divider); border-radius:var(--radius-md); padding:clamp(16px,3.5vw,28px);">
-          <div style="min-height:clamp(240px,50vw,360px); display:grid; place-items:center; text-align:center; padding:var(--space-6); background:var(--color-surface); border-radius:var(--radius-sm);">
-            <span style="font-size:13px; line-height:2; letter-spacing:.06em; color:var(--color-neutral-700);">企業様用のご予約カレンダーは準備中です。<br>福利厚生のご案内ページのお問い合わせよりご相談ください。</span>
-          </div>
-          <div style="margin-top:var(--space-4); display:grid; justify-items:start;">
-            <a class="btn btn-primary" href="corporate.html#contact" style="padding:var(--space-2) var(--space-4); letter-spacing:.08em;">福利厚生のお問い合わせへ</a>
-          </div>
+<section class="section" id="access">
+  <div class="wrap">
+    <div class="rule"></div>
+    <p class="kicker">Access</p>
+    <h2 class="title">場所・アクセス</h2>
+    <div class="cols" style="margin-top:24px;">
+      <div>
+        <div class="arow"><p class="l">住所</p><p class="t">〒904-0317
+沖縄県中頭郡読谷村ときわ30番地1</p></div>
+        <div class="arow"><p class="l">営業時間</p><p class="t">13:00〜18:00
+土曜・日曜</p></div>
+        <div class="arow"><p class="l">駐車場</p><p class="t">建物前に駐車できます（台数は準備中）</p></div>
+        <div class="arow"><p class="l">お問い合わせ</p><p class="t">LINEまたはお電話にて</p></div>
+        <div style="margin-top:18px;">
+          <a class="btn btn-primary btn-lg" href="https://maps.google.com/?q=沖縄県中頭郡読谷村ときわ30番地1" target="_blank" rel="noopener">地図アプリで開く</a>
         </div>
       </div>
+      <figure>
+        <img class="plate" src="exterior.png" alt="LOKOMAIKAI の外観" style="aspect-ratio:4/3;">
+        <figcaption class="cap">赤い OPEN の看板が目印です</figcaption>
+        <div class="mapframe">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3574.460824003641!2d127.7548291107244!3d26.37629577687495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e5110070dffec5%3A0x39c2b6ea77e285d5!2sLOKOMAIKAI!5e0!3m2!1sja!2sus!4v1786445127894!5m2!1sja!2sus" title="LOKOMAIKAI の地図" loading="lazy" allowfullscreen="" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+      </figure>
+    </div>
+  </div>
+</section>
 
-      <div style="margin-top:var(--space-6); display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:var(--space-4);">
-        <div style="border-top:1px solid var(--color-text); padding-top:var(--space-3);">
-          <p style="margin:0 0 var(--space-1); font-size:12px; letter-spacing:.16em; color:var(--color-accent-700);">所要時間</p>
-          <p style="margin:0; font-size:15px; line-height:1.95; letter-spacing:.02em;">お着替えとカウンセリングを含め、コース時間＋20分ほど。</p>
-        </div>
-        <div style="border-top:1px solid var(--color-text); padding-top:var(--space-3);">
-          <p style="margin:0 0 var(--space-1); font-size:12px; letter-spacing:.16em; color:var(--color-accent-700);">お支払い</p>
-          <p style="margin:0; font-size:15px; line-height:1.95; letter-spacing:.02em;">現金・各種クレジットカード・電子マネー。</p>
-        </div>
-        <div style="border-top:1px solid var(--color-text); padding-top:var(--space-3);">
-          <p style="margin:0 0 var(--space-1); font-size:12px; letter-spacing:.16em; color:var(--color-accent-700);">キャンセル</p>
-          <p style="margin:0; font-size:15px; line-height:1.95; letter-spacing:.02em;">前日までにご連絡ください。</p>
-        </div>
+<section class="section-tight shop">
+  <div class="wrap" style="max-width:820px;">
+    <div class="rule"></div>
+    <p class="kicker">The Shop</p>
+    <h2 class="title shop-h">ハワイアン雑貨店 LOKOMAIKAI</h2>
+    <p class="lead">沖縄・読谷村ときわにある、小さなハワイアンショップです。ハワイで見つけた雑貨やアクセサリー、フード、ハワイアンジュエリーなどを取り扱っています。エステはこの同じ店内、奥の一室で行います。買い物のついでに、旅の途中に、どうぞ気軽にお立ち寄りください。</p>
+    <div class="btns">
+      <a class="btn btn-primary btn-lg" href="https://hanahou.ne.jp/" target="_blank" rel="noopener">雑貨店のページへ</a>
+      <a class="btn btn-line btn-lg" href="corporate.html">福利厚生のご案内</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols2">
+      <div>
+        <span class="logo"><img src="logo.png" alt="LOKOMAIKAI"></span>
+        <p class="tag">loko maikaʻi — a generous, good heart</p>
+      </div>
+      <div class="info">
+        <span>〒904-0317 沖縄県中頭郡読谷村ときわ30番地1</span>
+        <span>営業 13:00〜18:00／土曜・日曜</span>
+      </div>
+      <div class="fnav">
+        <a href="#about">LOKOMAIKAI について</a>
+        <a href="#menu">メニューとお値段</a>
+        <a href="#reserve">ご予約</a>
+        <a href="#access">場所・アクセス</a>
+        <a href="corporate.html">福利厚生のご案内</a>
       </div>
     </div>
-  </section>
+    <div class="copy">© 2026 LOKOMAIKAI</div>
+  </div>
+</footer>
 
-  <section id="access" style="padding:clamp(64px,12vw,132px) clamp(18px,4vw,36px);">
-    <div style="max-width:1060px; margin:0 auto;">
-      <div style="width:56px; height:1px; background:var(--color-accent);"></div>
-      <p style="margin:var(--space-4) 0 0; font-family:'Cormorant Garamond',serif; font-size:12px; letter-spacing:.28em; color:var(--color-accent-700); text-transform:uppercase;">Access</p>
-      <h2 style="margin:var(--space-3) 0 0; font-weight:500; font-size:clamp(26px,6vw,40px); letter-spacing:.01em;">場所・アクセス</h2>
-      <div style="margin-top:clamp(32px,6vw,56px); display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:clamp(28px,5vw,56px); align-items:start;">
-        <div style="display:grid; gap:var(--space-6); align-content:start;">
-          <div style="border-top:1px solid var(--color-divider); padding-top:var(--space-3);">
-            <p style="margin:0 0 var(--space-2); font-size:12px; letter-spacing:.18em; color:var(--color-neutral-600);">住所</p>
-            <p style="margin:0; font-size:16px; line-height:2; letter-spacing:.02em; font-variant-numeric:lining-nums tabular-nums; white-space:pre-line;">〒904-0317
-沖縄県中頭郡読谷村ときわ30番地1</p>
-          </div>
-          <div style="border-top:1px solid var(--color-divider); padding-top:var(--space-3);">
-            <p style="margin:0 0 var(--space-2); font-size:12px; letter-spacing:.18em; color:var(--color-neutral-600);">営業時間</p>
-            <p style="margin:0; font-size:16px; line-height:2; letter-spacing:.02em; font-variant-numeric:lining-nums tabular-nums; white-space:pre-line;">13:00〜18:00
-土曜・日曜</p>
-          </div>
-          <div style="border-top:1px solid var(--color-divider); padding-top:var(--space-3);">
-            <p style="margin:0 0 var(--space-2); font-size:12px; letter-spacing:.18em; color:var(--color-neutral-600);">駐車場</p>
-            <p style="margin:0; font-size:16px; line-height:2; letter-spacing:.02em;">建物前に駐車できます（台数は準備中）</p>
-          </div>
-          <div style="border-top:1px solid var(--color-divider); padding-top:var(--space-3);">
-            <p style="margin:0 0 var(--space-2); font-size:12px; letter-spacing:.18em; color:var(--color-neutral-600);">お問い合わせ</p>
-            <p style="margin:0; font-size:16px; line-height:2; letter-spacing:.02em;">LINEまたはお電話にて</p>
-          </div>
-          <a class="btn btn-primary" href="https://maps.google.com/?q=沖縄県中頭郡読谷村ときわ30番地1" target="_blank" rel="noopener" style="justify-self:start; padding:var(--space-3) var(--space-6); letter-spacing:.08em;">地図アプリで開く</a>
-        </div>
-        <figure style="margin:0; display:grid; gap:var(--space-3);">
-          <img class="plate" src="exterior.png" alt="LOKOMAIKAI の外観" style="width:100%; aspect-ratio:4/3; object-fit:cover;">
-          <figcaption style="letter-spacing:.06em;">赤い OPEN の看板が目印です</figcaption>
-          <div style="box-sizing:border-box; border:6px solid var(--color-surface); outline:1px solid var(--color-divider); aspect-ratio:16/10;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3574.460824003641!2d127.7548291107244!3d26.37629577687495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e5110070dffec5%3A0x39c2b6ea77e285d5!2sLOKOMAIKAI!5e0!3m2!1sja!2sus!4v1786445127894!5m2!1sja!2sus" title="LOKOMAIKAI の地図" loading="lazy" allowfullscreen="" referrerpolicy="strict-origin-when-cross-origin" style="width:100%; height:100%; border:0; display:block; filter:sepia(.16) saturate(.9);"></iframe>
-          </div>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <section style="background:var(--color-neutral-100); border-top:1px solid var(--color-divider); padding:clamp(56px,11vw,112px) clamp(18px,4vw,36px);">
-    <div style="max-width:860px; margin:0 auto;">
-      <div style="width:56px; height:1px; background:var(--color-accent);"></div>
-      <p style="margin:var(--space-4) 0 0; font-family:'Cormorant Garamond',serif; font-size:12px; letter-spacing:.28em; color:var(--color-accent-700); text-transform:uppercase;">The Shop</p>
-      <h2 style="margin:var(--space-3) 0 0; font-weight:500; font-size:clamp(24px,5.4vw,36px); letter-spacing:.01em;">ハワイアン雑貨店 LOKOMAIKAI</h2>
-      <p style="margin:var(--space-4) 0 0; font-size:16px; line-height:2.05; letter-spacing:.02em; text-wrap:pretty;">沖縄・読谷村ときわにある、小さなハワイアンショップです。ハワイで見つけた雑貨やアクセサリー、フード、ハワイアンジュエリーなどを取り扱っています。エステはこの同じ店内、奥の一室で行います。買い物のついでに、旅の途中に、どうぞ気軽にお立ち寄りください。</p>
-      <div style="margin-top:var(--space-6); display:flex; flex-wrap:wrap; gap:var(--space-3);">
-        <a class="btn btn-primary" href="https://hanahou.ne.jp/" target="_blank" rel="noopener" style="padding:var(--space-3) var(--space-6); letter-spacing:.08em;">雑貨店のページへ</a>
-        <a class="btn btn-secondary" href="corporate.html" style="padding:var(--space-3) var(--space-6); letter-spacing:.08em;">福利厚生のご案内</a>
-      </div>
-    </div>
-  </section>
-
-  <footer style="background:var(--color-neutral-900); color:var(--color-neutral-200); padding:clamp(48px,9vw,88px) clamp(18px,4vw,36px);">
-    <div style="max-width:1060px; margin:0 auto; display:grid; gap:var(--space-8);">
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:var(--space-8); align-items:start;">
-        <div style="display:grid; gap:var(--space-4); justify-items:start;">
-          <span style="display:inline-flex; padding:var(--space-3) var(--space-4); background:var(--color-neutral-100); border-radius:var(--radius-sm);">
-            <img src="logo.png" alt="LOKOMAIKAI" style="height:30px; width:auto;">
-          </span>
-          <p style="margin:0; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:15px; letter-spacing:.08em; color:var(--color-accent-300);">loko maikaʻi — a generous, good heart</p>
-        </div>
-        <div style="display:grid; gap:var(--space-2); font-size:14.5px; line-height:2; letter-spacing:.02em; color:color-mix(in srgb, var(--color-neutral-100) 86%, transparent);">
-          <span>〒904-0317 沖縄県中頭郡読谷村ときわ30番地1</span>
-          <span style="font-variant-numeric:lining-nums tabular-nums;">営業 13:00〜18:00／土曜・日曜</span>
-        </div>
-        <div style="display:grid; gap:var(--space-2); font-size:13.5px;">
-          <a href="#about" style="color:var(--color-neutral-200); text-decoration:none; letter-spacing:.06em;">LOKOMAIKAI について</a>
-          <a href="#menu" style="color:var(--color-neutral-200); text-decoration:none; letter-spacing:.06em;">メニューとお値段</a>
-          <a href="#reserve" style="color:var(--color-neutral-200); text-decoration:none; letter-spacing:.06em;">ご予約</a>
-          <a href="#access" style="color:var(--color-neutral-200); text-decoration:none; letter-spacing:.06em;">場所・アクセス</a>
-          <a href="corporate.html" style="color:var(--color-neutral-200); text-decoration:none; letter-spacing:.06em;">福利厚生のご案内</a>
-        </div>
-      </div>
-      <div style="border-top:1px solid color-mix(in srgb, var(--color-neutral-100) 18%, transparent); padding-top:var(--space-4); font-size:12px; letter-spacing:.1em; color:color-mix(in srgb, var(--color-neutral-100) 48%, transparent); font-variant-numeric:lining-nums tabular-nums;">© 2026 LOKOMAIKAI</div>
-    </div>
-  </footer>
-</div>
 </body>
 </html>
